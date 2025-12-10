@@ -9,6 +9,10 @@ namespace StockMasterCore.Models
         public decimal TotalDiscountLoss { get; set; }       // Потери из-за уценки
         public decimal TotalExpiredLoss { get; set; }        // Потери из-за просрочки
         public decimal TotalInventoryValue { get; set; }     // Общая стоимость остатков
+        public decimal TotalLosses => TotalDiscountLoss + TotalExpiredLoss; // Общие убытки склада (от скидок + от списания)
+        public decimal NetProfit => TotalRevenue - TotalLosses; // Чистая прибыль (выручка минус все убытки)
+        public double AverageDailySales => CurrentDay > 0 ? (double)TotalProductsSold / CurrentDay : 0; // Средние продажи в день (общее количество ÷ дни работы)
+
         public void Reset()                                  // Обнуление данных
         {
             CurrentDay = 0;

@@ -1,140 +1,143 @@
 ﻿// Координирует все процессы: прием заказов, отгрузку, списание, пополнение запасов, короче говоря - "мозг системы"
 // Отвечает за: всю бизнес-логику работы склада, обработку заказов, управление запасами, уценку товаров
 using StockMasterCore.Models;
+using StockMasterCore.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace StockMasterCore.Services
 {
-    public class WarehouseService
+    public class WarehouseService : IWarehouseService
     {
-        // Хранилища данных
-        private List<Product> _products;           // Все товары на складе
-        private List<Store> _stores;               // Все магазины-клиенты
-        private List<Order> _orders;               // Все заказы от магазинов
-        private List<SupplyRequest> _supplyRequests; // Заявки поставщикам на пополнение
-        private List<Order> _pendingShipments;     // Готовые к отгрузке заказы
+        private List<Product> _products;
+        private List<Store> _stores;
+        private List<Order> _orders;
+        private List<SupplyRequest> _supplyRequests;
+        private List<Order> _pendingShipments;
 
-        private readonly Random _random = new Random();
+        private readonly IInventoryManager _inventoryManager;
+        private readonly IOrderProcessor _orderProcessor;
 
-        // Конфигурация системы и сбор статистики
-        public SimulationConfig Config { get; set; }     // Настройки моделирования
-        public WarehouseStatistics Statistics { get; private set; } // Статистика работы
+        public SimulationConfig Config { get; set; }
+        public WarehouseStatistics Statistics { get; private set; }
+        public WarehouseSummary Summary { get; private set; }
 
-        public WarehouseService()
+        public WarehouseService(IInventoryManager inventoryManager, IOrderProcessor orderProcessor)
         {
-            // Инициализация пустых коллекций при создании сервиса
+            _inventoryManager = inventoryManager ?? throw new ArgumentNullException(nameof(inventoryManager));
+            _orderProcessor = orderProcessor ?? throw new ArgumentNullException(nameof(orderProcessor));
+
             _products = new List<Product>();
             _stores = new List<Store>();
             _orders = new List<Order>();
             _supplyRequests = new List<SupplyRequest>();
             _pendingShipments = new List<Order>();
+
             Statistics = new WarehouseStatistics();
             Config = new SimulationConfig();
+            Summary = new WarehouseSummary();
         }
 
-        // Инициализация склада начальными данными
+        public WarehouseService() : this(new InventoryManager(), new OrderProcessor())
+        {
+        }
+
         public void InitializeWarehouse(List<Product> products, List<Store> stores)
         {
-            _products = products;
-            _stores = stores;
-            Statistics.Reset(); // Сброс данных при новой инициализации
+            _products = products ?? throw new ArgumentNullException(nameof(products));
+            _stores = stores ?? throw new ArgumentNullException(nameof(stores));
+
+            Statistics.Reset();
+            UpdateSummary();
         }
 
-        // ОСНОВНОЙ МЕТОД - ОБРАБОТКА ОДНОГО РАБОЧЕГО ДНЯ
         public void ProcessDay()
         {
-            // 1. Проверка просроченных товаров (самое первое - убрать испорченное)
-            CheckExpiredProducts();
+            // 1. Обработка поставок от поставщиков
+            _inventoryManager.ProcessDeliveries(_supplyRequests, _products, Config);
 
-            // 2. Обработка заказов за день (основная деятельность)
+            // 2. Проверка и списание просроченных товаров
+            _inventoryManager.CheckExpiredProducts(_products, Statistics);
+
+            // 3. Автоматическое применение скидок
+            ApplyAutomaticDiscounts();
+
+            // 4. Обработка заказов за день
             ProcessDailyOrders();
 
-            // 3. Проверка необходимости пополнения запасов (планирование)
-            CheckInventoryLevels();
+            // 5. Проверка необходимости пополнения запасов
+            _inventoryManager.CheckInventoryLevels(_products, _supplyRequests, Config);
 
-            // 4. Обновление статистики (аналитика)
+            // 6. Обновление статистики и сводки
             UpdateStatistics();
+            UpdateSummary();
         }
 
-        // Проверка и списание просроченных товаров
-        private void CheckExpiredProducts()
+        public void ProcessSimulation(int days)
         {
-            foreach (var product in _products.Where(p => p.IsExpired))
+            for (int day = 0; day < days; day++)
             {
-                // Расчет убытков от списания и обновление статистики
-                Statistics.TotalExpiredLoss += product.QuantityInStock * product.BasePrice;
-                product.QuantityInStock = 0; // Полное списание просрочки
+                ProcessDay();
             }
         }
 
-        // Обработка одного заказа от магазина
         public void ProcessOrder(Order order)
         {
-            foreach (var item in order.Items)
+            if (order == null) return;
+
+            var processedOrder = _orderProcessor.ProcessOrder(order, _products, Statistics);
+            if (processedOrder.IsProcessed)
             {
-                var product = _products.FirstOrDefault(p => p.Id == item.ProductId);
-                if (product == null) continue;
-
-                // РАСЧЕТ КОЛИЧЕСТВА УПАКОВОК ДЛЯ ОТГРУЗКИ:
-                // Определяем сколько упаковок нужно для заказанного количества
-                int packagesNeeded = (int)Math.Ceiling((double)item.RequestedQuantity / product.PackageSize);
-                int availablePackages = product.QuantityInStock;
-
-                // Берем минимум из "нужно" и "есть в наличии"
-                int packagesToShip = Math.Min(packagesNeeded, availablePackages);
-                item.PackagesToShip = packagesToShip;
-                item.ActualQuantity = packagesToShip * product.PackageSize;
-
-                // ОБНОВЛЕНИЕ ЗАПАСОВ НА СКЛАДЕ:
-                product.QuantityInStock -= packagesToShip;
-
-                // ОБНОВЛЕНИЕ СТАТИСТИКИ ПРОДАЖ:
-                Statistics.TotalProductsSold += item.ActualQuantity;
-                Statistics.TotalRevenue += item.ActualQuantity * product.CurrentPrice;
-
-                // УЧЕТ ПОТЕРЬ ОТ УЦЕНКИ (если товар был со скидкой)
-                if (product.DiscountPercentage > 0)
-                {
-                    Statistics.TotalDiscountLoss += item.ActualQuantity * (product.BasePrice - product.CurrentPrice);
-                }
+                _pendingShipments.Add(processedOrder);
             }
-
-            order.IsProcessed = true;
-            _pendingShipments.Add(order); // Добавляем в список готовых к отгрузке
         }
 
-        // Обработка всех заказов за текущий день
         private void ProcessDailyOrders()
         {
-            var todayOrders = _orders.Where(o => o.OrderDate.Date == DateTime.Now.Date && !o.IsProcessed).ToList();
+            var todayOrders = _orders
+                .Where(o => o.OrderDate.Date == DateTime.Now.Date && !o.IsProcessed)
+                .ToList();
 
-            foreach (var order in todayOrders)
+            var processedOrders = _orderProcessor.ProcessDailyOrders(todayOrders, _products, Statistics);
+
+            foreach (var order in processedOrders.Where(o => o.IsProcessed))
             {
-                ProcessOrder(order);
+                _pendingShipments.Add(order);
             }
         }
 
-        // Проверка уровня запасов и создание заявок поставщикам
-        private void CheckInventoryLevels()
+        public void ApplyAutomaticDiscounts()
         {
             foreach (var product in _products)
             {
-                // Если товара мало и еще нет активной заявки на этот товар
-                if (product.QuantityInStock <= product.ReorderThreshold &&
-                    !_supplyRequests.Any(sr => sr.ProductId == product.Id && !sr.IsFulfilled))
+                if (product.DaysUntilExpiry <= Config.DiscountDaysThreshold &&
+                    product.DaysUntilExpiry > 0 &&
+                    product.QuantityInStock > 0 &&
+                    product.DiscountPercentage == 0)
                 {
-                    var supplyRequest = new SupplyRequest
+                    // Автоматическая скидка: чем меньше дней, тем больше скидка
+                    decimal discount = 0;
+                    switch (product.DaysUntilExpiry)
                     {
-                        Id = _supplyRequests.Count + 1,
-                        ProductId = product.Id,
-                        Quantity = product.MaxCapacity - product.QuantityInStock, // Дозаказываем до полной вместимости
-                        RequestDate = DateTime.Now,
-                        ExpectedDeliveryDate = DateTime.Now.AddDays(_random.Next(1, 6)), // Случайно 1-5 дней
-                        IsFulfilled = false
-                    };
-                    _supplyRequests.Add(supplyRequest);
+                        case 1:
+                            discount = 50; // 50% скидка если остался 1 день
+                            break;
+                        case 2:
+                            discount = 30; // 30% скидка если осталось 2 дня
+                            break;
+                        case 3:
+                            discount = 20; // 20% скидка если осталось 3 дня
+                            break;
+                        default:
+                            discount = 0;
+                            break;
+                    }
+
+                    if (discount > 0)
+                    {
+                        product.DiscountPercentage = discount;
+                    }
                 }
             }
         }
@@ -148,8 +151,13 @@ namespace StockMasterCore.Services
                 var product = _products.FirstOrDefault(p => p.Id == request.ProductId);
                 if (product != null)
                 {
-                    product.QuantityInStock += request.Quantity; // Увеличиваем остатки
-                    request.IsFulfilled = true; // Помечаем как выполненную
+                    product.QuantityInStock += request.Quantity;
+                    request.IsFulfilled = true;
+
+                    // Обновляем срок годности для нового товара
+                    product.ExpiryDate = DateTime.Now.AddDays(
+                        new Random().Next(Config.MinExpiryDays, Config.MaxExpiryDays + 1));
+                    product.DiscountPercentage = 0;
                 }
             }
         }
@@ -160,7 +168,7 @@ namespace StockMasterCore.Services
             var product = _products.FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
-                product.DiscountPercentage = Math.Min(discountPercentage, 100); // Не более 100%
+                product.DiscountPercentage = Math.Min(Math.Max(discountPercentage, 0), 100);
             }
         }
 
@@ -168,9 +176,9 @@ namespace StockMasterCore.Services
         public List<DiscountProduct> GetProductsForDiscount()
         {
             return _products
-                .Where(p => p.DaysUntilExpiry <= Config.DiscountDaysThreshold && // Скоро истекает
-                           p.DaysUntilExpiry > 0 &&                             // Но еще не просрочен
-                           p.QuantityInStock > 0)                              // И есть в наличии
+                .Where(p => p.DaysUntilExpiry <= Config.DiscountDaysThreshold &&
+                           p.DaysUntilExpiry > 0 &&
+                           p.QuantityInStock > 0)
                 .Select(p => new DiscountProduct
                 {
                     ProductId = p.Id,
@@ -178,31 +186,75 @@ namespace StockMasterCore.Services
                     OriginalPrice = p.BasePrice,
                     DiscountedPrice = p.CurrentPrice,
                     DiscountPercentage = p.DiscountPercentage,
-                    DaysUntilExpiry = p.DaysUntilExpiry
+                    DaysUntilExpiry = p.DaysUntilExpiry,
+                    CurrentStock = p.QuantityInStock
                 })
                 .ToList();
         }
 
-        // МЕТОДЫ ДЛЯ ПОЛУЧЕНИЯ ДАННЫХ (интерфейс для будущей WPFки)
+        public List<Product> GetExpiringProducts()
+        {
+            return _products
+                .Where(p => p.DaysUntilExpiry <= Config.DiscountDaysThreshold &&
+                           p.QuantityInStock > 0)
+                .ToList();
+        }
 
-        public List<Product> GetProducts() => _products;
-        public List<Store> GetStores() => _stores;
-        public List<Order> GetPendingShipments() => _pendingShipments;
-        public List<SupplyRequest> GetPendingSupplyRequests() => _supplyRequests.Where(sr => !sr.IsFulfilled).ToList();
-        public List<Order> GetTodayOrders() => _orders.Where(o => o.OrderDate.Date == DateTime.Now.Date).ToList();
+        public List<Product> GetLowStockProducts()
+        {
+            return _products
+                .Where(p => p.NeedsRestocking && p.QuantityInStock > 0)
+                .ToList();
+        }
+
+        public void AddOrder(Order order)
+        {
+            if (order != null)
+            {
+                order.Id = _orders.Count + 1;
+                _orders.Add(order);
+            }
+        }
+
+        public void AddOrders(List<Order> orders)
+        {
+            if (orders != null)
+            {
+                foreach (var order in orders)
+                {
+                    order.Id = _orders.Count + 1;
+                    _orders.Add(order);
+                }
+            }
+        }
+
+        public List<Product> GetProducts() => _products.ToList();
+        public List<Store> GetStores() => _stores.ToList();
+        public List<Order> GetPendingShipments() => _pendingShipments.ToList();
+        public List<SupplyRequest> GetPendingSupplyRequests() =>
+            _supplyRequests.Where(sr => !sr.IsFulfilled).ToList();
+        public List<Order> GetTodayOrders() =>
+            _orders.Where(o => o.OrderDate.Date == DateTime.Now.Date).ToList();
+        public List<Order> GetAllOrders() => _orders.ToList();
 
         // Обновление ежедневной статистики
         private void UpdateStatistics()
         {
             Statistics.CurrentDay++;
-            Statistics.TotalInventoryValue = _products.Sum(p => p.QuantityInStock * p.CurrentPrice);
+            Statistics.TotalInventoryValue = _products.Sum(p => p.StockValue);
         }
 
-        // Добавление нового заказа в систему
-        public void AddOrder(Order order)
+        private void UpdateSummary()
         {
-            order.Id = _orders.Count + 1;
-            _orders.Add(order);
+            Summary.TotalProducts = _products.Count;
+            Summary.TotalStores = _stores.Count;
+            Summary.TotalOrders = _orders.Count;
+            Summary.ActiveProducts = _products.Count(p => p.QuantityInStock > 0);
+            Summary.LowStockProducts = _products.Count(p => p.NeedsRestocking);
+            Summary.ExpiringSoonProducts = _products.Count(p =>
+                p.DaysUntilExpiry <= Config.DiscountDaysThreshold && p.DaysUntilExpiry > 0);
+            Summary.PendingShipments = _pendingShipments.Count;
+            Summary.PendingSupplyRequests = _supplyRequests.Count(sr => !sr.IsFulfilled);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿//Модель заказа. Отвечает за: Представление заказов от магазинов и их содержимого
+﻿// Модель заказа. Отвечает за: Представление заказов от магазинов и их содержимого
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +9,7 @@ namespace StockMasterCore.Models
         public int Id { get; set; }                          // Номер заказа
         public int StoreId { get; set; }                     // Какой магазин заказал
         public DateTime OrderDate { get; set; }              // Дата заказа
-        public List<OrderItem> Items { get; set; }           // Список товаров в заказе
+        public List<OrderItem> Items { get; set; } = new List<OrderItem>(); // Список товаров в заказе
         public bool IsProcessed { get; set; }                // Обработан ли заказ
         public decimal TotalAmount { get; set; }             // Общая сумма
     }

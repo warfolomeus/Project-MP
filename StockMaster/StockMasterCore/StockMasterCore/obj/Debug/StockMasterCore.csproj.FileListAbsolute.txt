@@ -1,0 +1,6 @@
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\bin\Debug\StockMasterCore.dll
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\bin\Debug\StockMasterCore.pdb
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\obj\Debug\StockMasterCore.csproj.AssemblyReference.cache
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\obj\Debug\StockMasterCore.csproj.CoreCompileInputs.cache
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\obj\Debug\StockMasterCore.dll
+C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\StockMasterCore\obj\Debug\StockMasterCore.pdb

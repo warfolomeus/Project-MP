@@ -1,4 +1,4 @@
-﻿//Модель для работы с уценкой товаров. Отвечает за: Представление информации о товарах, которые подлежат уценке или уже уценены
+﻿// Модель для работы с уценкой товаров. Отвечает за: Представление информации о товарах, которые подлежат уценке или уже уценены
 namespace StockMasterCore.Models
 {
     public class DiscountProduct
@@ -9,5 +9,6 @@ namespace StockMasterCore.Models
         public decimal DiscountedPrice { get; set; }         // Цена со скидкой (текущая)
         public decimal DiscountPercentage { get; set; }      // Размер скидки в процентах
         public int DaysUntilExpiry { get; set; }             // Оставшееся количество дней до истечения срока
+        public int CurrentStock { get; set; }                // Текущий остаток на складе
     }
 }

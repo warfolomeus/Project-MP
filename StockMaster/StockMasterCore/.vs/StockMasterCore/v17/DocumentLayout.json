@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|c:\\users\\pushi\\desktop\\unic\\\u043C\u043F\\\u043C\u043F \u043F\u0440\u043E\u0435\u043A\u0442\\project-mp\\stockmaster\\stockmastercore\\stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\warehousesummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\warehousesummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\warehouseservicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\warehouseservicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,32 +19,56 @@
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\testdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\simulationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\simulationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|c:\\users\\pushi\\desktop\\unic\\\u043C\u043F\\\u043C\u043F \u043F\u0440\u043E\u0435\u043A\u0442\\project-mp\\stockmaster\\stockmastercore\\stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|c:\\users\\pushi\\desktop\\unic\\\u043C\u043F\\\u043C\u043F \u043F\u0440\u043E\u0435\u043A\u0442\\project-mp\\stockmaster\\stockmastercore\\stockmastercore\\models\\supplyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\supplyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\supplyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\iwarehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\iwarehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\itestdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\itestdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\iorderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\iorderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\iinventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\iinventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|c:\\users\\pushi\\desktop\\unic\\\u043C\u043F\\\u043C\u043F \u043F\u0440\u043E\u0435\u043A\u0442\\project-mp\\stockmaster\\stockmastercore\\stockmastercore\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,45 +83,149 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "WarehouseSummary.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseSummary.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Models\\WarehouseSummary.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseSummary.cs",
+              "RelativeToolTip": "StockMasterCore\\Models\\WarehouseSummary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:24:05.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WarehouseServiceFactory.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseServiceFactory.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\WarehouseServiceFactory.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseServiceFactory.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\WarehouseServiceFactory.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:15:52.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\OrderProcessor.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\OrderProcessor.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:04:15.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InventoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\InventoryManager.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\InventoryManager.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwFQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:03:34.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IOrderProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IOrderProcessor.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\IOrderProcessor.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IOrderProcessor.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\IOrderProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:02:55.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IInventoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IInventoryManager.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\IInventoryManager.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IInventoryManager.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\IInventoryManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:02:31.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ITestDataGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T10:01:43.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IWarehouseService.cs",
+              "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBQAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T09:54:13.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WarehouseService.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Services\\WarehouseService.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
               "RelativeToolTip": "StockMasterCore\\Services\\WarehouseService.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAYwIkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAmwAEBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T14:41:36.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TestDataGenerator.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Services\\TestDataGenerator.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
               "RelativeToolTip": "StockMasterCore\\Services\\TestDataGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwB8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T14:34:50.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "WarehouseStatistics.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseStatistics.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\WarehouseStatistics.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseStatistics.cs",
               "RelativeToolTip": "StockMasterCore\\Models\\WarehouseStatistics.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T14:29:07.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "SupplyRequest.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\SupplyRequest.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\SupplyRequest.cs",
@@ -102,20 +238,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "SimulationConfig.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\SimulationConfig.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\SimulationConfig.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\SimulationConfig.cs",
               "RelativeToolTip": "StockMasterCore\\Models\\SimulationConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwCAAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T14:10:07.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "DiscountProduct.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\DiscountProduct.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\DiscountProduct.cs",
@@ -128,39 +264,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Order.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\Order.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Order.cs",
               "RelativeToolTip": "StockMasterCore\\Models\\Order.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T14:06:50.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Store.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Store.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\Store.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Store.cs",
               "RelativeToolTip": "StockMasterCore\\Models\\Store.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T14:06:07.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\pushi\\Desktop\\unic\\\u041C\u041F\\\u041C\u041F \u043F\u0440\u043E\u0435\u043A\u0442\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
               "RelativeToolTip": "StockMasterCore\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwBUAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T14:04:45.362Z",
               "EditorCaption": ""

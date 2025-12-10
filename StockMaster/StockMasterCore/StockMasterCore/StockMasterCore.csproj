@@ -48,9 +48,17 @@
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\SupplyRequest.cs" />
     <Compile Include="Models\WarehouseStatistics.cs" />
+    <Compile Include="Models\WarehouseSummary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\IInventoryManager.cs" />
+    <Compile Include="Services\Interfaces\IOrderProcessor.cs" />
+    <Compile Include="Services\Interfaces\ITestDataGenerator.cs" />
+    <Compile Include="Services\Interfaces\IWarehouseService.cs" />
+    <Compile Include="Services\InventoryManager.cs" />
+    <Compile Include="Services\OrderProcessor.cs" />
     <Compile Include="Services\TestDataGenerator.cs" />
     <Compile Include="Services\WarehouseService.cs" />
+    <Compile Include="Services\WarehouseServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
