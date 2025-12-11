@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="WarehouseApp.Views.StatisticsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок и кнопки -->
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Статистика работы склада" FontSize="20" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Content="🔄 Обновить" Command="{Binding LoadStatisticsCommand}" Margin="0,0,10,0"/>
+                <Button Content="🔄 Сбросить статистику" Command="{Binding ResetStatisticsCommand}" 
+                        Background="#e74c3c" Foreground="White" Margin="0,0,10,0"/>
+                <Button Content="📤 Экспорт" Command="{Binding ExportStatisticsCommand}" 
+                        Background="#3498db" Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Основное содержимое -->
+        <ScrollViewer Grid.Row="1" Margin="10">
+            <StackPanel>
+                <!-- Общая статистика -->
+                <GroupBox Header="📈 Общая статистика" Margin="0,0,0,15">
+                    <DataGrid ItemsSource="{Binding StatsItems}" AutoGenerateColumns="False" 
+                              IsReadOnly="True" Height="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Показатель" Binding="{Binding Key}" Width="200"/>
+                            <DataGridTextColumn Header="Значение" Binding="{Binding Value}" Width="200"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+
+                <!-- Графики и диаграммы (заглушки) -->
+                <WrapPanel>
+                    <Border Margin="5" Padding="10" BorderBrush="#3498db" BorderThickness="1" 
+                            Width="370" Height="200">
+                        <StackPanel>
+                            <TextBlock Text="Продажи по дням" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <TextBlock Text="(график будет здесь)" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" Foreground="Gray"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Margin="5" Padding="10" BorderBrush="#2ecc71" BorderThickness="1" 
+                            Width="370" Height="200">
+                        <StackPanel>
+                            <TextBlock Text="Распределение убытков" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <TextBlock Text="(диаграмма будет здесь)" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" Foreground="Gray"/>
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
+
+                <!-- Ключевые показатели -->
+                <GroupBox Header="🎯 Ключевые показатели" Margin="0,15,0,0">
+                    <WrapPanel Margin="10">
+                        <Border Margin="5" Padding="15" BorderBrush="#27ae60" BorderThickness="2" 
+                                Background="#ecf0f1" Width="180" Height="100">
+                            <StackPanel>
+                                <TextBlock Text="Чистая прибыль" FontWeight="SemiBold" FontSize="12"/>
+                                <TextBlock Text="{Binding Statistics.NetProfit, StringFormat=C}" FontSize="20" 
+                                           Foreground="#27ae60" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Margin="5" Padding="15" BorderBrush="#e74c3c" BorderThickness="2" 
+                                Background="#ecf0f1" Width="180" Height="100">
+                            <StackPanel>
+                                <TextBlock Text="Общие убытки" FontWeight="SemiBold" FontSize="12"/>
+                                <TextBlock Text="{Binding Statistics.TotalLosses, StringFormat=C}" FontSize="20" 
+                                           Foreground="#e74c3c" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Margin="5" Padding="15" BorderBrush="#f39c12" BorderThickness="2" 
+                                Background="#ecf0f1" Width="180" Height="100">
+                            <StackPanel>
+                                <TextBlock Text="Средние продажи/день" FontWeight="SemiBold" FontSize="12"/>
+                                <TextBlock Text="{Binding Statistics.AverageDailySales, StringFormat=F2}" FontSize="20" 
+                                           Foreground="#f39c12" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

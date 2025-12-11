@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="WarehouseApp.Views.WarehouseDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+            <TextBlock Text="Панель управления складом" FontSize="22" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <!-- Кнопки обновления -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <Button Content="Обновить" Command="{Binding RefreshCommand}" 
+                        Margin="0,0,10,0" Padding="10,5"/>
+                <Button Content="К товарам" Command="{Binding ShowProductsCommand}" 
+                        Margin="0,0,10,0" Padding="10,5"/>
+                <Button Content="К заказам" Command="{Binding ShowOrdersCommand}" 
+                        Padding="10,5"/>
+            </StackPanel>
+
+            <!-- Карточки статистики -->
+            <WrapPanel Margin="0,0,0,20">
+                <Border Margin="5" Padding="15" BorderBrush="#3498db" BorderThickness="2" 
+                        Background="#ecf0f1" Width="180" Height="100">
+                    <StackPanel>
+                        <TextBlock Text="Всего товаров" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock Text="{Binding Summary.TotalProducts}" FontSize="28" 
+                                   Foreground="#2c3e50" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Margin="5" Padding="15" BorderBrush="#2ecc71" BorderThickness="2" 
+                        Background="#ecf0f1" Width="180" Height="100">
+                    <StackPanel>
+                        <TextBlock Text="Товаров в наличии" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock Text="{Binding Summary.ActiveProducts}" FontSize="28" 
+                                   Foreground="#27ae60" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Margin="5" Padding="15" BorderBrush="#e74c3c" BorderThickness="2" 
+                        Background="#ecf0f1" Width="180" Height="100">
+                    <StackPanel>
+                        <TextBlock Text="С низким запасом" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock Text="{Binding Summary.LowStockProducts}" FontSize="28" 
+                                   Foreground="#c0392b" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Margin="5" Padding="15" BorderBrush="#f39c12" BorderThickness="2" 
+                        Background="#ecf0f1" Width="180" Height="100">
+                    <StackPanel>
+                        <TextBlock Text="Скоро истекают" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock Text="{Binding Summary.ExpiringSoonProducts}" FontSize="28" 
+                                   Foreground="#d35400" FontWeight="Bold"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <!-- Сводная информация -->
+            <GroupBox Header="Сводная информация" Margin="0,0,0,15">
+                <DataGrid ItemsSource="{Binding SummaryItems}" AutoGenerateColumns="False" 
+                          IsReadOnly="True" Height="200">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Показатель" Binding="{Binding Key}" Width="200"/>
+                        <DataGridTextColumn Header="Значение" Binding="{Binding Value}" Width="150"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <!-- Товары с низким запасом -->
+            <GroupBox Header="Товары для пополнения" Margin="0,0,0,15">
+                <DataGrid ItemsSource="{Binding LowStockProducts}" AutoGenerateColumns="False" 
+                          IsReadOnly="True" Height="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Товар" Binding="{Binding Name}" Width="150"/>
+                        <DataGridTextColumn Header="Остаток" Binding="{Binding QuantityInStock}" Width="80"/>
+                        <DataGridTextColumn Header="Минимум" Binding="{Binding ReorderThreshold}" Width="80"/>
+                        <DataGridTextColumn Header="Заполнение" Width="100">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{Binding Path=CapacityPercentage, StringFormat=N1}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <!-- Товары для уценки -->
+            <GroupBox Header="Товары для уценки" Margin="0,0,0,15">
+                <DataGrid ItemsSource="{Binding ExpiringProducts}" AutoGenerateColumns="False" 
+                          IsReadOnly="True" Height="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Товар" Binding="{Binding Name}" Width="150"/>
+                        <DataGridTextColumn Header="Дней до срока" Binding="{Binding DaysUntilExpiry}" Width="100"/>
+                        <DataGridTextColumn Header="Скидка" Width="80">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{Binding Path=DiscountPercentage, StringFormat=N0}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Текущая цена" Width="100">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{Binding Path=CurrentPrice, StringFormat=N2}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
