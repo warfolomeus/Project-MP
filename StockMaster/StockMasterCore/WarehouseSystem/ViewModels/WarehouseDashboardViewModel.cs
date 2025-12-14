@@ -1,6 +1,4 @@
 ﻿using StockMasterCore.Models;
-using StockMasterCore.Services;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -10,17 +8,14 @@ namespace WarehouseApp.ViewModels
     public class WarehouseDashboardViewModel : BaseViewModel
     {
         private readonly MainViewModel _mainViewModel;
-        private WarehouseSummary _summary;
 
-        public WarehouseSummary Summary
-        {
-            get => _summary;
-            set => SetField(ref _summary, value);
-        }
+        public SimulationConfig Config => Services.IntegrationService.Instance.Config;
+        public WarehouseStatistics Statistics => Services.IntegrationService.Instance.WarehouseService.Statistics;
 
-        public ObservableCollection<Product> LowStockProducts { get; } = new ObservableCollection<Product>();
-        public ObservableCollection<WarehouseApp.Models.ProductDisplay> ExpiringProducts { get; } = new ObservableCollection<WarehouseApp.Models.ProductDisplay>();
-        public ObservableCollection<WarehouseApp.Models.SummaryItem> SummaryItems { get; } = new ObservableCollection<WarehouseApp.Models.SummaryItem>();
+        public WarehouseSummary Summary { get; set; }
+        public ObservableCollection<Product> LowStockProducts { get; set; }
+        public ObservableCollection<WarehouseApp.Models.ProductDisplay> ExpiringProducts { get; set; }
+        public ObservableCollection<WarehouseApp.Models.SummaryItem> SummaryItems { get; set; }
 
         public ICommand RefreshCommand { get; }
         public ICommand ShowProductsCommand { get; }
@@ -29,76 +24,70 @@ namespace WarehouseApp.ViewModels
         public WarehouseDashboardViewModel(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
+
             Summary = new WarehouseSummary();
+            LowStockProducts = new ObservableCollection<Product>();
+            ExpiringProducts = new ObservableCollection<WarehouseApp.Models.ProductDisplay>();
+            SummaryItems = new ObservableCollection<WarehouseApp.Models.SummaryItem>();
 
-            RefreshCommand = new Commands.RelayCommand(RefreshData);
-            ShowProductsCommand = new Commands.RelayCommand(() => _mainViewModel.ShowProductsCommand.Execute(null));
-            ShowOrdersCommand = new Commands.RelayCommand(() => _mainViewModel.ShowOrdersCommand.Execute(null));
+            RefreshCommand = new Commands.RelayCommand(LoadData);
+            ShowProductsCommand = new Commands.RelayCommand(() =>
+                _mainViewModel.ShowProductsCommand.Execute(null));
+            ShowOrdersCommand = new Commands.RelayCommand(() =>
+                _mainViewModel.ShowOrdersCommand.Execute(null));
 
-            RefreshData(null);
+            LoadData();
         }
 
-        private void RefreshData(object parameter)
+        public void LoadData(object parameter = null)
         {
-            // Здесь должна быть логика получения данных из сервиса
-            // Временно создаем тестовые данные
+            var service = Services.IntegrationService.Instance;
 
-            var warehouseService = WarehouseServiceFactory.CreateWarehouseService();
-
-            // Тестовые данные для демонстрации
-            Summary.TotalProducts = 15;
-            Summary.TotalStores = 5;
-            Summary.TotalOrders = 42;
-            Summary.ActiveProducts = 12;
-            Summary.LowStockProducts = 3;
-            Summary.ExpiringSoonProducts = 2;
-            Summary.PendingShipments = 5;
-            Summary.PendingSupplyRequests = 3;
-
+            // Обновляем сводку
+            Summary = service.WarehouseService.Summary;
             UpdateSummaryItems();
 
-            // Тестовые товары с низким запасом
+            // Обновляем товары с низким запасом
             LowStockProducts.Clear();
-            LowStockProducts.Add(new Product { Id = 1, Name = "Рис", QuantityInStock = 5, ReorderThreshold = 10 });
-            LowStockProducts.Add(new Product { Id = 2, Name = "Макароны", QuantityInStock = 3, ReorderThreshold = 8 });
+            var lowStock = service.WarehouseService.GetLowStockProducts();
+            foreach (var product in lowStock)
+                LowStockProducts.Add(product);
 
-            // Тестовые товары для уценки (используем ProductDisplay вместо Product)
+            // Обновляем товары для уценки
             ExpiringProducts.Clear();
-            ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
+            var expiring = service.WarehouseService.GetExpiringProducts();
+            foreach (var product in expiring)
             {
-                Id = 3,
-                Name = "Молоко",
-                DaysUntilExpiry = 2,
-                DiscountPercentage = 20
-            });
-            ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
-            {
-                Id = 4,
-                Name = "Хлеб",
-                DaysUntilExpiry = 1,
-                DiscountPercentage = 30
-            });
+                ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    DaysUntilExpiry = product.DaysUntilExpiry,
+                    DiscountPercentage = product.DiscountPercentage,
+                    CurrentPrice = product.CurrentPrice,
+                    QuantityInStock = product.QuantityInStock
+                });
+            }
+
+            OnPropertyChanged(nameof(Summary));
+            OnPropertyChanged(nameof(Statistics));
+            OnPropertyChanged(nameof(Config));
         }
 
         private void UpdateSummaryItems()
         {
             SummaryItems.Clear();
 
-            var items = new Dictionary<string, object>
+            if (Summary != null)
             {
-                ["Всего товаров"] = Summary.TotalProducts,
-                ["Магазинов"] = Summary.TotalStores,
-                ["Всего заказов"] = Summary.TotalOrders,
-                ["Товаров в наличии"] = Summary.ActiveProducts,
-                ["С низким запасом"] = Summary.LowStockProducts,
-                ["Скоро истекают"] = Summary.ExpiringSoonProducts,
-                ["Готово к отгрузке"] = Summary.PendingShipments,
-                ["Ожидают поставки"] = Summary.PendingSupplyRequests
-            };
-
-            foreach (var item in items)
-            {
-                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = item.Key, Value = item.Value });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Всего товаров", Value = Summary.TotalProducts });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Магазинов", Value = Summary.TotalStores });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Всего заказов", Value = Summary.TotalOrders });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Товаров в наличии", Value = Summary.ActiveProducts });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "С низким запасом", Value = Summary.LowStockProducts });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Скоро истекают", Value = Summary.ExpiringSoonProducts });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Готово к отгрузке", Value = Summary.PendingShipments });
+                SummaryItems.Add(new WarehouseApp.Models.SummaryItem { Key = "Ожидают поставки", Value = Summary.PendingSupplyRequests });
             }
         }
     }

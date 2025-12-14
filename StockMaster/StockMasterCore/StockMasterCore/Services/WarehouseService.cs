@@ -86,7 +86,7 @@ namespace StockMasterCore.Services
         {
             if (order == null) return;
 
-            var processedOrder = _orderProcessor.ProcessOrder(order, _products, Statistics);
+            var processedOrder = _orderProcessor.ProcessOrder(order, _products, Statistics); 
             if (processedOrder.IsProcessed)
             {
                 _pendingShipments.Add(processedOrder);

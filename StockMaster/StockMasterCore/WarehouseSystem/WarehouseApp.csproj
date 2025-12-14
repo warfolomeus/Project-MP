@@ -59,7 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\CountToVisibilityConverter.cs" />
     <Compile Include="Models\ProductDisplay.cs" />
+    <Compile Include="Services\IntegrationService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\OrdersViewModel.cs" />

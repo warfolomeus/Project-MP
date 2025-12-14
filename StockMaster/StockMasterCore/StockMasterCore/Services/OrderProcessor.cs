@@ -11,7 +11,7 @@ namespace StockMasterCore.Services
     {
         public Order ProcessOrder(Order order, List<Product> products, WarehouseStatistics statistics)
         {
-            if (order == null) return order;
+            if (order == null || order.IsProcessed) return order;
 
             order.TotalAmount = 0;
 
@@ -20,24 +20,31 @@ namespace StockMasterCore.Services
                 var product = products.FirstOrDefault(p => p.Id == item.ProductId);
                 if (product == null || product.QuantityInStock <= 0) continue;
 
-                var packagesToShip = CalculatePackagesToShip(product, item.RequestedQuantity);
+                // Рассчитываем сколько упаковок можем отгрузить
+                int packagesToShip = CalculatePackagesToShip(product, item.RequestedQuantity);
                 if (packagesToShip == 0) continue;
 
                 item.PackagesToShip = packagesToShip;
                 item.ActualQuantity = packagesToShip * product.PackageSize;
 
+                // Уменьшаем запас
                 product.QuantityInStock -= packagesToShip;
 
+                // Рассчитываем стоимость
                 decimal itemTotal = item.ActualQuantity * product.CurrentPrice;
                 order.TotalAmount += itemTotal;
 
-                statistics.TotalProductsSold += item.ActualQuantity;
-                statistics.TotalRevenue += itemTotal;
-
-                if (product.DiscountPercentage > 0)
+                // Обновляем статистику
+                if (statistics != null)
                 {
-                    decimal discountLoss = item.ActualQuantity * (product.BasePrice - product.CurrentPrice);
-                    statistics.TotalDiscountLoss += discountLoss;
+                    statistics.TotalProductsSold += item.ActualQuantity;
+                    statistics.TotalRevenue += itemTotal;
+
+                    if (product.DiscountPercentage > 0)
+                    {
+                        decimal discountLoss = item.ActualQuantity * (product.BasePrice - product.CurrentPrice);
+                        statistics.TotalDiscountLoss += discountLoss;
+                    }
                 }
             }
 

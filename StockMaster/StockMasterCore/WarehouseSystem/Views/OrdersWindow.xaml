@@ -14,49 +14,28 @@
 
         <!-- Заголовок и кнопки -->
         <StackPanel Grid.Row="0" Margin="10">
-            <TextBlock Text="Управление заказами" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="Заказы магазинов" FontSize="20" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <Button Content="Обновить" Command="{Binding RefreshCommand}" Margin="0,0,10,0"/>
-                <Button Content="Загрузить заказы" Command="{Binding LoadOrdersCommand}" Margin="0,0,10,0"/>
-                <Button Content="Обработать заказ" Command="{Binding ProcessOrderCommand}" 
-                        Background="#2ecc71" Foreground="White" Margin="0,0,10,0"/>
-                <Button Content="Просмотр деталей" Command="{Binding ViewOrderDetailsCommand}" 
-                        Background="#3498db" Foreground="White"/>
+                <TextBlock Text="Список заказов за сегодня и готовых к отгрузке" 
+                           VerticalAlignment="Center" Margin="20,0,0,0"/>
             </StackPanel>
         </StackPanel>
 
         <!-- Основное содержимое -->
-        <TabControl Grid.Row="1" Margin="10">
-            <TabItem Header="Заказы за сегодня">
-                <DataGrid ItemsSource="{Binding TodayOrders}" AutoGenerateColumns="False"
-                          SelectedItem="{Binding SelectedOrder}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
-                        <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70"/>
-                        <DataGridTextColumn Header="Дата" 
-                                           Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" Width="100"/>
-                        <DataGridTextColumn Header="Сумма" Width="100">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="{Binding Path=TotalAmount, StringFormat=N2}"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridCheckBoxColumn Header="Обработан" Binding="{Binding IsProcessed}" Width="80"/>
-                        <DataGridTextColumn Header="Товаров" 
-                                           Binding="{Binding Items.Count}" Width="70"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <TabItem Header="Готовые к отгрузке">
-                <DataGrid ItemsSource="{Binding PendingShipments}" AutoGenerateColumns="False"
-                          SelectedItem="{Binding SelectedOrder}">
+            <!-- Заказы за сегодня -->
+            <GroupBox Header="Заказы за сегодня" Margin="0,0,5,0">
+                <DataGrid ItemsSource="{Binding TodayOrders}" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
                         <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70"/>
-                        <DataGridTextColumn Header="Дата" 
-                                           Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" Width="100"/>
+                        <DataGridTextColumn Header="Товаров" Binding="{Binding Items.Count}" Width="70"/>
                         <DataGridTextColumn Header="Сумма" Width="100">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
@@ -64,20 +43,29 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Товаров" 
-                                           Binding="{Binding Items.Count}" Width="70"/>
+                        <DataGridTemplateColumn Header="Действие" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Отправить" 
+                                            Command="{Binding DataContext.MarkAsShippedCommand, 
+                                                    RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"
+                                            Background="#3498db" Foreground="White"
+                                            Padding="5,2"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-            </TabItem>
+            </GroupBox>
 
-            <TabItem Header="Все заказы">
-                <DataGrid ItemsSource="{Binding AllOrders}" AutoGenerateColumns="False"
-                          SelectedItem="{Binding SelectedOrder}">
+            <!-- Готовые к отгрузке -->
+            <GroupBox Header="Готовые к отгрузке" Grid.Column="1" Margin="5,0,0,0">
+                <DataGrid ItemsSource="{Binding PendingShipments}" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
                         <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70"/>
-                        <DataGridTextColumn Header="Дата" 
-                                           Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" Width="100"/>
+                        <DataGridTextColumn Header="Товаров" Binding="{Binding Items.Count}" Width="70"/>
                         <DataGridTextColumn Header="Сумма" Width="100">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
@@ -85,12 +73,22 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridCheckBoxColumn Header="Обработан" Binding="{Binding IsProcessed}" Width="80"/>
-                        <DataGridTextColumn Header="Товаров" 
-                                           Binding="{Binding Items.Count}" Width="70"/>
+                        <DataGridTextColumn Header="Статус" Width="80">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text">
+                                        <Setter.Value>
+                                            <MultiBinding StringFormat="{}{0}">
+                                                <Binding Path="IsProcessed"/>
+                                            </MultiBinding>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-            </TabItem>
-        </TabControl>
+            </GroupBox>
+        </Grid>
     </Grid>
 </UserControl>

@@ -94,12 +94,12 @@
 
                 <Button Content="▶ Обработать день" 
                         Command="{Binding ProcessDayCommand}"
-                        Background="#27ae60" Foreground="White"
+                        Background="#3498db" Foreground="White"
                         Margin="0,5" Height="40" FontWeight="Bold"
                         BorderThickness="0"/>
 
-                <Button Content="⏩ Запустить симуляцию" 
-                        Command="{Binding RunFullSimulationCommand}"
+                <Button Content="🗑️ Сбросить систему" 
+                        Command="{Binding ResetCommand}"
                         Background="#e74c3c" Foreground="White"
                         Margin="0,5" Height="40" FontWeight="Bold"
                         BorderThickness="0"/>
@@ -113,7 +113,18 @@
 
         <!-- Статус бар -->
         <Border DockPanel.Dock="Bottom" Height="30" Background="#ecf0f1">
-            <TextBlock Text="Готов к работе" VerticalAlignment="Center" Margin="10,0"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                <TextBlock Text="День:"/>
+                <TextBlock Text="{Binding Path=CurrentView.Statistics.CurrentDay}" 
+                           FontWeight="Bold" Margin="5,0,10,0"/>
+                <TextBlock Text="из"/>
+                <TextBlock Text="{Binding Path=CurrentView.Config.SimulationDays}" 
+                           FontWeight="Bold" Margin="5,0,20,0"/>
+                <TextBlock Text="| Выручка:" Margin="10,0,5,0"/>
+                <TextBlock Text="{Binding Path=CurrentView.Statistics.TotalRevenue, StringFormat=N2}" 
+                           FontWeight="Bold" Margin="0,0,5,0"/>
+                <TextBlock Text="руб."/>
+            </StackPanel>
         </Border>
     </DockPanel>
 </Window>

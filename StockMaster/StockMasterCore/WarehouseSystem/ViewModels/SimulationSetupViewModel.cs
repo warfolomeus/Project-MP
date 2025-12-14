@@ -1,6 +1,4 @@
 ﻿using StockMasterCore.Models;
-using StockMasterCore.Services;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -11,46 +9,58 @@ namespace WarehouseApp.ViewModels
     public class SimulationSetupViewModel : BaseViewModel
     {
         private readonly MainViewModel _mainViewModel;
-        private SimulationConfig _config;
 
         public SimulationConfig Config
         {
-            get => _config;
-            set => SetField(ref _config, value);
+            get => Services.IntegrationService.Instance.Config;
+            set => Services.IntegrationService.Instance.Config = value;
         }
 
-        public ObservableCollection<Product> Products { get; } = new ObservableCollection<Product>();
-        public ObservableCollection<Store> Stores { get; } = new ObservableCollection<Store>();
+        public WarehouseStatistics Statistics => Services.IntegrationService.Instance.WarehouseService.Statistics;
+
+        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<Store> Stores { get; set; }
 
         public ICommand GenerateDataCommand { get; }
         public ICommand StartSimulationCommand { get; }
         public ICommand ShowDashboardCommand { get; }
+        public ICommand ResetCommand { get; }
 
         public SimulationSetupViewModel(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
-            Config = new SimulationConfig();
+
+            Products = new ObservableCollection<Product>();
+            Stores = new ObservableCollection<Store>();
 
             GenerateDataCommand = new Commands.RelayCommand(GenerateTestData);
             StartSimulationCommand = new Commands.RelayCommand(StartSimulation);
-            ShowDashboardCommand = new Commands.RelayCommand(() => _mainViewModel.ShowDashboardCommand.Execute(null));
+            ShowDashboardCommand = new Commands.RelayCommand(ShowDashboard);
+            ResetCommand = new Commands.RelayCommand(Reset);
+
+            LoadExistingData();
+        }
+
+        private void LoadExistingData()
+        {
+            Products.Clear();
+            Stores.Clear();
+
+            var service = Services.IntegrationService.Instance;
+
+            foreach (var product in service.Products)
+                Products.Add(product);
+
+            foreach (var store in service.Stores)
+                Stores.Add(store);
         }
 
         private void GenerateTestData(object parameter)
         {
-            var generator = WarehouseServiceFactory.CreateTestDataGenerator();
-            var products = generator.GenerateProducts(Config);
-            var stores = generator.GenerateStores(Config);
+            Services.IntegrationService.Instance.GenerateTestData();
+            LoadExistingData();
 
-            Products.Clear();
-            foreach (var product in products)
-                Products.Add(product);
-
-            Stores.Clear();
-            foreach (var store in stores)
-                Stores.Add(store);
-
-            MessageBox.Show($"Сгенерировано {products.Count} товаров и {stores.Count} магазинов",
+            MessageBox.Show($"Сгенерировано {Products.Count} товаров и {Stores.Count} магазинов",
                           "Данные созданы", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
@@ -66,7 +76,17 @@ namespace WarehouseApp.ViewModels
             MessageBox.Show("Симуляция начата! Переходим к панели управления.",
                           "Симуляция", MessageBoxButton.OK, MessageBoxImage.Information);
 
+            ShowDashboard();
+        }
+
+        private void ShowDashboard()
+        {
             _mainViewModel.ShowDashboardCommand.Execute(null);
+        }
+
+        private void Reset(object parameter)
+        {
+            _mainViewModel.ResetCommand.Execute(null);
         }
     }
 }

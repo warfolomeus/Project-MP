@@ -1,4 +1,4 @@
-﻿// Генератор тестовых данных. Отвечает за: создание реалистичных данных для тестирования
+﻿// StockMasterCore/Services/TestDataGenerator.cs
 using StockMasterCore.Models;
 using StockMasterCore.Services.Interfaces;
 using System;
@@ -9,17 +9,13 @@ namespace StockMasterCore.Services
 {
     public class TestDataGenerator : ITestDataGenerator
     {
-        // Генератор случайных чисел для создания разнообразных данных
         private readonly Random _random = new Random();
 
-        // Справочник названий продуктов для генерации товаров
-        // Содержит 15 популярных продуктовых наименований как требуется по условию (12≤ K ≤20)
         private readonly string[] _productNames =
         {
             "Рис", "Макароны", "Мука", "Сахар", "Соль",
             "Масло подсолнечное", "Чай", "Кофе", "Печенье", "Шоколад",
-            "Консервы мясные", "Консервы рыбные", "Соки", "Вода", "Молоко",
-            "Хлеб", "Яйца", "Масло сливочное", "Сыр", "Йогурт"
+            "Консервы мясные", "Консервы рыбные", "Соки", "Вода", "Молоко"
         };
 
         public List<Product> GenerateProducts(SimulationConfig config)
@@ -31,13 +27,17 @@ namespace StockMasterCore.Services
                 int maxCapacity = _random.Next(config.MinProductCapacity, config.MaxProductCapacity + 1);
                 int packageSize = _random.Next(config.MinPackageSize, config.MaxPackageSize + 1);
 
+                // Делаем начальный запас НИЗКИМ для демонстрации работы поставок
+                // Вместо maxCapacity/2 используем maxCapacity/4 или меньше
+                int initialStock = _random.Next(maxCapacity / 6, maxCapacity / 3 + 1);
+
                 products.Add(new Product
                 {
                     Id = i + 1,
                     Name = _productNames[i % _productNames.Length],
                     Description = $"Продукт {_productNames[i % _productNames.Length]}",
-                    BasePrice = (decimal)(_random.Next(config.MinProductPrice, config.MaxProductPrice) + _random.NextDouble()),
-                    QuantityInStock = _random.Next(0, maxCapacity + 1),
+                    BasePrice = _random.Next(config.MinProductPrice, config.MaxProductPrice + 1),
+                    QuantityInStock = initialStock, // МАЛЕНЬКИЙ начальный запас
                     MaxCapacity = maxCapacity,
                     PackageSize = packageSize,
                     ExpiryDate = DateTime.Now.AddDays(_random.Next(config.MinExpiryDays, config.MaxExpiryDays + 1)),
@@ -52,16 +52,14 @@ namespace StockMasterCore.Services
         public List<Store> GenerateStores(SimulationConfig config)
         {
             var stores = new List<Store>();
-            var storeNames = new[] { "Магазин", "Супермаркет", "Палатка", "Торговая точка", "Мини-маркет" };
-            var streets = new[] { "Ленина", "Нахимсона", "Советская", "Труфанова", "Победы", "Гагарина", "Кирова", "Союзная" };
 
             for (int i = 0; i < config.StoreCount; i++)
             {
                 stores.Add(new Store
                 {
                     Id = i + 1,
-                    Name = $"{storeNames[i % storeNames.Length]} №{i + 1}",
-                    Address = $"ул. {streets[i % streets.Length]}, д. {_random.Next(1, 100)}",
+                    Name = $"Магазин №{i + 1}",
+                    Address = $"ул. Торговая, д. {_random.Next(1, 100)}",
                     ContactPerson = $"Менеджер {i + 1}"
                 });
             }
@@ -69,56 +67,99 @@ namespace StockMasterCore.Services
             return stores;
         }
 
-        // Генерация случайного заказа от торговой точки
         public Order GenerateRandomOrder(Store store, List<Product> products, IWarehouseService service, int dayOffset)
         {
             var order = new Order
-       
             {
+                Id = 0, // Будет установлен позже
                 StoreId = store.Id,
-                OrderDate = DateTime.Now.AddDays(dayOffset)
+                OrderDate = DateTime.Now.AddDays(dayOffset),
+                IsProcessed = false,
+                TotalAmount = 0
             };
 
-            // ЛОГИКА ВЫБОРА ТОВАРОВ ДЛЯ ЗАКАЗА:
-            // По условию: "вероятность заказа уцененных продуктов выше, чем неуцененных"
+            // Случайное количество видов товаров в заказе (1-5)
+            int productsInOrder = _random.Next(1, 6);
+            productsInOrder = Math.Min(productsInOrder, products.Count);
 
-            // Получаем список уцененных товаров
-            var discountedProducts = service.GetProductsForDiscount();
-
-            // Решаем: заказывать уцененные товары или все подряд
-            // Если есть уцененные товары и случайное число меньше вероятности заказа уцененных
-            var productsToOrderFrom = discountedProducts.Any() &&
-                                    _random.NextDouble() < service.Config.DiscountedProductOrderProbability
-                ? products.Where(p => p.DiscountPercentage > 0 && p.QuantityInStock > 0).ToList()
-                : products.Where(p => p.QuantityInStock > 0).ToList();
-
-            // Если нет уцененных товаров
-            if (!productsToOrderFrom.Any())
+            // Выбираем случайные товары
+            var availableProducts = products.Where(p => p.QuantityInStock > 0).ToList();
+            if (!availableProducts.Any())
                 return order;
 
-            // Определяем количество видов товаров в заказе (от Min до Max)
-            int productsInOrder = _random.Next(service.Config.MinProductsPerOrder,
-                                             service.Config.MaxProductsPerOrder + 1);
+            // Сортируем товары: сначала уцененные
+            var discountedProducts = availableProducts.Where(p => p.IsDiscounted).ToList();
+            var regularProducts = availableProducts.Where(p => !p.IsDiscounted).ToList();
 
-            // Добавляем товары в заказ
-            for (int i = 0; i < productsInOrder; i++)
+            // Вероятность заказа уцененного товара выше
+            bool preferDiscounted = discountedProducts.Any() &&
+                                   _random.NextDouble() < service.Config.DiscountedProductOrderProbability;
+
+            var selectedProducts = new List<Product>();
+
+            if (preferDiscounted && discountedProducts.Any())
             {
-                if (!productsToOrderFrom.Any()) break;
+                // Добавляем уцененные товары
+                int discountCount = Math.Min(productsInOrder, discountedProducts.Count);
+                for (int i = 0; i < discountCount; i++)
+                {
+                    var product = discountedProducts[_random.Next(discountedProducts.Count)];
+                    if (!selectedProducts.Contains(product))
+                        selectedProducts.Add(product);
+                }
 
-                // Выбираем случайный товар из доступных
-                var product = productsToOrderFrom[_random.Next(productsToOrderFrom.Count)];
+                // Добавляем обычные товары если нужно
+                int remaining = productsInOrder - discountCount;
+                if (remaining > 0 && regularProducts.Any())
+                {
+                    for (int i = 0; i < remaining; i++)
+                    {
+                        var product = regularProducts[_random.Next(regularProducts.Count)];
+                        if (!selectedProducts.Contains(product))
+                            selectedProducts.Add(product);
+                    }
+                }
+            }
+            else
+            {
+                // Добавляем случайные товары
+                for (int i = 0; i < productsInOrder; i++)
+                {
+                    var product = availableProducts[_random.Next(availableProducts.Count)];
+                    if (!selectedProducts.Contains(product))
+                        selectedProducts.Add(product);
+                }
+            }
+
+            // Создаем элементы заказа
+            foreach (var product in selectedProducts)
+            {
+                // Случайное количество упаковок (1-10)
                 int packages = _random.Next(service.Config.MinPackagesPerProduct,
                                           service.Config.MaxPackagesPerProduct + 1);
-                var requestedQuantity = packages * product.PackageSize;
 
-                order.Items.Add(new OrderItem
+                int requestedQuantity = packages * product.PackageSize;
+
+                // Рассчитываем сколько можем отгрузить
+                int availablePackages = product.QuantityInStock / product.PackageSize;
+                int packagesToShip = Math.Min(packages, availablePackages);
+                int actualQuantity = packagesToShip * product.PackageSize;
+
+                var orderItem = new OrderItem
                 {
                     ProductId = product.Id,
-                    RequestedQuantity = requestedQuantity
-                });
+                    RequestedQuantity = requestedQuantity,
+                    ActualQuantity = actualQuantity,
+                    PackagesToShip = packagesToShip
+                };
 
-                // Убираем товар из списка чтобы не дублировать в одном заказе
-                productsToOrderFrom.Remove(product);
+                order.Items.Add(orderItem);
+
+                // Добавляем к общей сумме
+                if (actualQuantity > 0)
+                {
+                    order.TotalAmount += actualQuantity * product.CurrentPrice;
+                }
             }
 
             return order;
@@ -131,9 +172,11 @@ namespace StockMasterCore.Services
 
             foreach (var store in stores)
             {
+                // Магазин делает заказ с вероятностью 80%
                 if (_random.NextDouble() < service.Config.DailyOrderProbability)
                 {
                     var order = GenerateRandomOrder(store, products, service, dayOffset);
+
                     if (order.Items.Any())
                     {
                         dailyOrders.Add(order);
