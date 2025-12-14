@@ -10,86 +10,73 @@ namespace WarehouseApp.Services
     public class IntegrationService
     {
         private static IntegrationService _instance;
-        public static IntegrationService Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new IntegrationService();
-                return _instance;
-            }
-        }
+        public static IntegrationService Instance => _instance ?? (_instance = new IntegrationService());
 
         public IWarehouseService WarehouseService { get; private set; }
-        public ITestDataGenerator DataGenerator { get; private set; }
-
+        public ITestDataGenerator TestDataGenerator { get; private set; }
         public SimulationConfig Config { get; set; }
-        public List<Product> Products { get; set; }
-        public List<Store> Stores { get; set; }
-        public DateTime CurrentDate { get; set; }
+        public List<Product> Products { get; private set; }
+        public List<Store> Stores { get; private set; }
         public int CurrentDay { get; set; }
         public bool IsSimulationComplete { get; set; }
+        public DateTime SimulationStartDate { get; private set; }
 
-        private IntegrationService()
+        public IntegrationService()
         {
             Config = new SimulationConfig();
+            WarehouseService = WarehouseServiceFactory.CreateWarehouseService();
+            TestDataGenerator = WarehouseServiceFactory.CreateTestDataGenerator();
             Products = new List<Product>();
             Stores = new List<Store>();
-            CurrentDate = DateTime.Now.Date;
             CurrentDay = 0;
             IsSimulationComplete = false;
-
-            WarehouseService = WarehouseServiceFactory.CreateWarehouseService();
-            DataGenerator = WarehouseServiceFactory.CreateTestDataGenerator();
+            SimulationStartDate = DateTime.Now;
 
             WarehouseService.Config = Config;
         }
 
         public void GenerateTestData()
         {
-            Products = DataGenerator.GenerateProducts(Config);
-            Stores = DataGenerator.GenerateStores(Config);
-            InitializeWarehouse();
+            Products = TestDataGenerator.GenerateProducts(Config);
+            Stores = TestDataGenerator.GenerateStores(Config);
+            WarehouseService.InitializeWarehouse(Products, Stores);
             CurrentDay = 0;
             IsSimulationComplete = false;
         }
 
-        public void InitializeWarehouse()
+        public void ApplyDiscount(int productId, decimal discountPercentage)
         {
-            if (Products.Count > 0 && Stores.Count > 0)
-            {
-                WarehouseService.InitializeWarehouse(Products, Stores);
-            }
+            WarehouseService.ApplyDiscount(productId, discountPercentage);
+        }
+
+        public void RemoveDiscount(int productId)
+        {
+            WarehouseService.ApplyDiscount(productId, 0);
         }
 
         public bool ProcessDay()
         {
-            if (Products.Count == 0) return false;
-
-            // Проверяем, не завершена ли симуляция
-            if (CurrentDay >= Config.SimulationDays)
+            if (IsSimulationComplete || CurrentDay >= Config.SimulationDays)
             {
                 IsSimulationComplete = true;
                 return false;
             }
 
-            // Увеличиваем день
+            // Увеличиваем день перед обработкой
             CurrentDay++;
-            CurrentDate = CurrentDate.AddDays(1);
 
-            // 1. Обработка поставок от поставщиков
-            ProcessDeliveries();
+            // Очищаем ВСЕ старые заказы (обработанные) перед генерацией новых
+            WarehouseService.ClearProcessedOrders();
 
-            // 2. Генерируем заказы на текущий день
-            GenerateDailyOrders();
+            // Генерируем заказы на текущий день симуляции
+            WarehouseService.GenerateDailyOrders(CurrentDay);
 
-            // 3. Обрабатываем день через WarehouseService
+            // Обрабатываем день (списание, скидки, поставки)
             WarehouseService.ProcessDay();
 
-            // 4. Обновляем наши данные
-            Products = WarehouseService.GetProducts();
+            // Обновляем статистику
+            WarehouseService.Statistics.CurrentDay = CurrentDay;
 
-            // Проверяем завершение симуляции
             if (CurrentDay >= Config.SimulationDays)
             {
                 IsSimulationComplete = true;
@@ -98,84 +85,36 @@ namespace WarehouseApp.Services
             return true;
         }
 
-        private void ProcessDeliveries()
+        public void ProcessOrderManually(int orderId)
         {
-            var pendingRequests = WarehouseService.GetPendingSupplyRequests();
-            foreach (var request in pendingRequests)
-            {
-                if (!request.IsFulfilled && request.ExpectedDeliveryDate.HasValue)
-                {
-                    if (request.ExpectedDeliveryDate.Value.Date <= CurrentDate.Date)
-                    {
-                        WarehouseService.FulfillSupplyRequest(request.Id);
-                    }
-                }
-            }
-        }
-
-        private void GenerateDailyOrders()
-        {
-            // Генерируем заказы на текущий день
-            var dailyOrders = DataGenerator.GenerateDailyOrders(
-                Stores, Products, WarehouseService, CurrentDay);
-
-            foreach (var order in dailyOrders)
-            {
-                order.OrderDate = CurrentDate;
-                order.Id = GetNextOrderId();
-            }
-
-            if (dailyOrders.Any())
-            {
-                WarehouseService.AddOrders(dailyOrders);
-            }
-        }
-
-        private int GetNextOrderId()
-        {
-            var allOrders = WarehouseService.GetAllOrders();
-            return allOrders.Count > 0 ? allOrders.Max(o => o.Id) + 1 : 1;
+            WarehouseService.ProcessOrderManually(orderId);
         }
 
         public List<Order> GetTodayOrders()
         {
-            return WarehouseService.GetAllOrders()
-                .Where(o => o.OrderDate.Date == CurrentDate.Date)
-                .ToList();
+            return WarehouseService.GetTodayOrders();
         }
 
         public List<SupplyRequest> GetPendingSupplyRequests()
         {
-            return WarehouseService.GetPendingSupplyRequests()
-                .Where(r => !r.IsFulfilled)
-                .ToList();
+            return WarehouseService.GetPendingSupplyRequests();
         }
 
-        public void ApplyDiscount(int productId, decimal discountPercentage)
+        public List<Order> GetAllOrders()
         {
-            WarehouseService.ApplyDiscount(productId, discountPercentage);
-            Products = WarehouseService.GetProducts();
-        }
-
-        public void RemoveDiscount(int productId)
-        {
-            WarehouseService.ApplyDiscount(productId, 0);
-            Products = WarehouseService.GetProducts();
+            return WarehouseService.GetAllOrders();
         }
 
         public void Reset()
         {
             Config = new SimulationConfig();
-            Products = new List<Product>();
-            Stores = new List<Store>();
-            CurrentDate = DateTime.Now.Date;
+            WarehouseService = WarehouseServiceFactory.CreateWarehouseService();
+            WarehouseService.Config = Config;
+            Products.Clear();
+            Stores.Clear();
             CurrentDay = 0;
             IsSimulationComplete = false;
-
-            WarehouseService = WarehouseServiceFactory.CreateWarehouseService();
-            DataGenerator = WarehouseServiceFactory.CreateTestDataGenerator();
-
-            WarehouseService.Config = Config;
+            SimulationStartDate = DateTime.Now;
         }
     }
 }

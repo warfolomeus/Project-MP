@@ -1,4 +1,5 @@
 ﻿using StockMasterCore.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -48,7 +49,7 @@ namespace WarehouseApp.ViewModels
             LoadProductsCommand = new Commands.RelayCommand(LoadProducts);
             ApplyDiscountCommand = new Commands.RelayCommand(ApplyDiscount);
             RemoveDiscountCommand = new Commands.RelayCommand(RemoveDiscount);
-            RefreshCommand = new Commands.RelayCommand(LoadProducts);
+            RefreshCommand = new Commands.RelayCommand(RefreshData);
             AutoDiscountCommand = new Commands.RelayCommand(AutoDiscount);
 
             LoadProducts(null);
@@ -56,46 +57,82 @@ namespace WarehouseApp.ViewModels
 
         public void LoadProducts(object parameter)
         {
+            try
+            {
+                var service = Services.IntegrationService.Instance;
+
+                Products.Clear();
+                ExpiringProducts.Clear();
+                DiscountProducts.Clear();
+
+                // Проверяем, инициализирован ли сервис
+                if (service.Products == null)
+                {
+                    MessageBox.Show("Данные о товарах не загружены. Сначала сгенерируйте данные.",
+                                  "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                foreach (var product in service.Products)
+                {
+                    if (product == null) continue;
+
+                    Products.Add(product);
+
+                    // НЕ показываем товары с 0 или отрицательным сроком годности
+                    if (product.DaysUntilExpiry <= 3 && product.DaysUntilExpiry > 0 && product.QuantityInStock > 0)
+                    {
+                        ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
+                        {
+                            Id = product.Id,
+                            Name = product.Name,
+                            DaysUntilExpiry = product.DaysUntilExpiry,
+                            DiscountPercentage = product.DiscountPercentage,
+                            CurrentPrice = product.CurrentPrice,
+                            QuantityInStock = product.QuantityInStock
+                        });
+                    }
+
+                    if (product.IsDiscounted && product.DaysUntilExpiry > 0 && product.QuantityInStock > 0)
+                    {
+                        DiscountProducts.Add(new DiscountProduct
+                        {
+                            ProductId = product.Id,
+                            ProductName = product.Name,
+                            OriginalPrice = product.BasePrice,
+                            DiscountedPrice = product.CurrentPrice,
+                            DiscountPercentage = product.DiscountPercentage,
+                            DaysUntilExpiry = product.DaysUntilExpiry,
+                            CurrentStock = product.QuantityInStock
+                        });
+                    }
+                }
+
+                OnPropertyChanged(nameof(Statistics));
+                OnPropertyChanged(nameof(Config));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки товаров: {ex.Message}",
+                              "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void RefreshData(object parameter)
+        {
             var service = Services.IntegrationService.Instance;
 
-            Products.Clear();
-            ExpiringProducts.Clear();
-            DiscountProducts.Clear();
+            // Получаем актуальные продукты
+            var updatedProducts = service.WarehouseService.GetProducts();
+            service.Products.Clear();
+            foreach (var product in updatedProducts)
+                service.Products.Add(product);
 
-            foreach (var product in service.Products)
-            {
-                Products.Add(product);
+            // Обновляем отображение
+            LoadProducts(null);
 
-                if (product.DaysUntilExpiry <= 3 && product.DaysUntilExpiry > 0)
-                {
-                    ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        DaysUntilExpiry = product.DaysUntilExpiry,
-                        DiscountPercentage = product.DiscountPercentage,
-                        CurrentPrice = product.CurrentPrice,
-                        QuantityInStock = product.QuantityInStock
-                    });
-                }
-
-                if (product.IsDiscounted)
-                {
-                    DiscountProducts.Add(new DiscountProduct
-                    {
-                        ProductId = product.Id,
-                        ProductName = product.Name,
-                        OriginalPrice = product.BasePrice,
-                        DiscountedPrice = product.CurrentPrice,
-                        DiscountPercentage = product.DiscountPercentage,
-                        DaysUntilExpiry = product.DaysUntilExpiry,
-                        CurrentStock = product.QuantityInStock
-                    });
-                }
-            }
-
-            OnPropertyChanged(nameof(Statistics));
-            OnPropertyChanged(nameof(Config));
+            MessageBox.Show("Данные обновлены",
+                          "Обновлено", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void ApplyDiscount(object parameter)

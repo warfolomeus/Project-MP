@@ -12,8 +12,6 @@
 
             <!-- Кнопки обновления -->
             <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                <Button Content="Обновить" Command="{Binding RefreshCommand}" 
-                        Margin="0,0,10,0" Padding="10,5"/>
                 <Button Content="К товарам" Command="{Binding ShowProductsCommand}" 
                         Margin="0,0,10,0" Padding="10,5"/>
                 <Button Content="К заказам" Command="{Binding ShowOrdersCommand}" 

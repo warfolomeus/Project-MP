@@ -25,26 +25,41 @@ namespace StockMasterCore.Services
 
         public void CheckInventoryLevels(List<Product> products, List<SupplyRequest> supplyRequests, SimulationConfig config)
         {
-            foreach (var product in products)
+            try
             {
-                if (product.NeedsRestocking &&
-                    !supplyRequests.Any(sr => sr.ProductId == product.Id && !sr.IsFulfilled))
+                foreach (var product in products)
                 {
-                    int quantityToOrder = product.MaxCapacity - product.QuantityInStock;
-                    if (quantityToOrder > 0)
+                    if (product.NeedsRestocking)
                     {
-                        var supplyRequest = new SupplyRequest
+                        // Проверяем, нет ли уже активной заявки на этот товар
+                        bool hasActiveRequest = supplyRequests.Any(sr =>
+                            sr.ProductId == product.Id && !sr.IsFulfilled);
+
+                        if (!hasActiveRequest)
                         {
-                            Id = supplyRequests.Count + 1,
-                            ProductId = product.Id,
-                            Quantity = quantityToOrder,
-                            RequestDate = DateTime.Now,
-                            ExpectedDeliveryDate = DateTime.Now.AddDays(_random.Next(1, 6)),
-                            IsFulfilled = false
-                        };
-                        supplyRequests.Add(supplyRequest);
+                            int quantityToOrder = product.MaxCapacity - product.QuantityInStock;
+                            if (quantityToOrder > 0)
+                            {
+                                var supplyRequest = new SupplyRequest
+                                {
+                                    Id = supplyRequests.Count + 1,
+                                    ProductId = product.Id,
+                                    Quantity = quantityToOrder,
+                                    RequestDate = DateTime.Now,
+                                    ExpectedDeliveryDate = DateTime.Now.AddDays(_random.Next(1, 6)),
+                                    IsFulfilled = false
+                                };
+
+                                Console.WriteLine($"Создана заявка: ID={supplyRequest.Id}, ProductId={product.Id}, Quantity={quantityToOrder}");
+                                supplyRequests.Add(supplyRequest);
+                            }
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка в CheckInventoryLevels: {ex.Message}");
             }
         }
 
@@ -80,7 +95,7 @@ namespace StockMasterCore.Services
             if (product == null || product.QuantityInStock <= 0) return 0;
 
             int packagesNeeded = (int)Math.Ceiling((double)requestedQuantity / product.PackageSize);
-            int availablePackages = product.QuantityInStock;
+            int availablePackages = product.QuantityInStock / product.PackageSize;
 
             return Math.Min(packagesNeeded, availablePackages);
         }

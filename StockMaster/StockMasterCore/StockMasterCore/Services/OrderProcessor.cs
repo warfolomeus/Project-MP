@@ -14,13 +14,21 @@ namespace StockMasterCore.Services
             if (order == null || order.IsProcessed) return order;
 
             order.TotalAmount = 0;
+            bool hasItemsToShip = false;
+
+            // Сбрасываем ActualQuantity для пересчета
+            foreach (var item in order.Items)
+            {
+                item.ActualQuantity = 0;
+                item.PackagesToShip = 0;
+            }
 
             foreach (var item in order.Items)
             {
                 var product = products.FirstOrDefault(p => p.Id == item.ProductId);
                 if (product == null || product.QuantityInStock <= 0) continue;
 
-                // Рассчитываем сколько упаковок можем отгрузить
+                // ПЕРЕСЧИТЫВАЕМ сколько упаковок можем отгрузить СЕЙЧАС
                 int packagesToShip = CalculatePackagesToShip(product, item.RequestedQuantity);
                 if (packagesToShip == 0) continue;
 
@@ -28,27 +36,33 @@ namespace StockMasterCore.Services
                 item.ActualQuantity = packagesToShip * product.PackageSize;
 
                 // Уменьшаем запас
-                product.QuantityInStock -= packagesToShip;
+                int quantityToDeduct = packagesToShip * product.PackageSize;
+                product.QuantityInStock -= quantityToDeduct;
 
                 // Рассчитываем стоимость
                 decimal itemTotal = item.ActualQuantity * product.CurrentPrice;
                 order.TotalAmount += itemTotal;
+                hasItemsToShip = true;
 
                 // Обновляем статистику
-                if (statistics != null)
-                {
-                    statistics.TotalProductsSold += item.ActualQuantity;
-                    statistics.TotalRevenue += itemTotal;
+                statistics.TotalProductsSold += item.ActualQuantity;
+                statistics.TotalRevenue += itemTotal;
 
-                    if (product.DiscountPercentage > 0)
-                    {
-                        decimal discountLoss = item.ActualQuantity * (product.BasePrice - product.CurrentPrice);
-                        statistics.TotalDiscountLoss += discountLoss;
-                    }
+                if (product.DiscountPercentage > 0)
+                {
+                    decimal discountLoss = item.ActualQuantity * (product.BasePrice - product.CurrentPrice);
+                    statistics.TotalDiscountLoss += discountLoss;
                 }
             }
 
+            if (!hasItemsToShip)
+            {
+                // Заказ не может быть выполнен
+                return null;
+            }
+
             order.IsProcessed = true;
+
             return order;
         }
 
@@ -59,8 +73,42 @@ namespace StockMasterCore.Services
 
             foreach (var order in todayOrders)
             {
-                var processedOrder = ProcessOrder(order, products, statistics);
-                processedOrders.Add(processedOrder);
+                // Рассчитываем, что можем отгрузить, но не вычитаем запасы
+                decimal orderTotal = 0;
+                bool canBeProcessed = true;
+
+                foreach (var item in order.Items)
+                {
+                    var product = products.FirstOrDefault(p => p.Id == item.ProductId);
+                    if (product == null || product.QuantityInStock <= 0)
+                    {
+                        canBeProcessed = false;
+                        continue;
+                    }
+
+                    // Проверяем, есть ли достаточно товара
+                    int packagesToShip = CalculatePackagesToShip(product, item.RequestedQuantity);
+                    if (packagesToShip == 0)
+                    {
+                        canBeProcessed = false;
+                        continue;
+                    }
+
+                    item.PackagesToShip = packagesToShip;
+                    item.ActualQuantity = packagesToShip * product.PackageSize;
+
+                    // Расчет суммы, но без вычета запасов
+                    decimal itemTotal = item.ActualQuantity * product.CurrentPrice;
+                    orderTotal += itemTotal;
+                }
+
+                order.TotalAmount = orderTotal;
+                // НЕ ставим IsProcessed = true здесь!
+
+                if (canBeProcessed)
+                {
+                    processedOrders.Add(order);
+                }
             }
 
             return processedOrders;
@@ -82,10 +130,10 @@ namespace StockMasterCore.Services
 
         private int CalculatePackagesToShip(Product product, int requestedQuantity)
         {
-            if (product == null) return 0;
+            if (product == null || product.QuantityInStock <= 0) return 0;
 
             int packagesNeeded = (int)Math.Ceiling((double)requestedQuantity / product.PackageSize);
-            int availablePackages = product.QuantityInStock;
+            int availablePackages = product.QuantityInStock / product.PackageSize;
             return Math.Min(packagesNeeded, availablePackages);
         }
     }

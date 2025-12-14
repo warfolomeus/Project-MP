@@ -14,12 +14,15 @@ namespace StockMasterCore.Services.Interfaces
         void InitializeWarehouse(List<Product> products, List<Store> stores); // Инициализация
         void ProcessDay();                                   // Обработка одного дня
         void ProcessSimulation(int days);                    // Обработка нескольких дней
+        void GenerateDailyOrders(int dayOffset);            // Генерация заказов на день
+        Order ProcessOrderManually(int orderId);            // Ручная обработка заказа
         void ProcessOrder(Order order);                     // Обработка заказа
         void FulfillSupplyRequest(int requestId);           // Выполнение заявки поставщика
         void ApplyDiscount(int productId, decimal discountPercentage); // Применение скидки
         void ApplyAutomaticDiscounts();                     // Автоматическое применение скидок
         void AddOrder(Order order);                         // Добавление заказа
         void AddOrders(List<Order> orders);                 // Добавление списка заказов
+        void ClearProcessedOrders();                        // Очистка обработанных заказов (ДОБАВЛЕНО)
 
         // Методы получения данных
         List<Product> GetProducts();                        // Получение товаров

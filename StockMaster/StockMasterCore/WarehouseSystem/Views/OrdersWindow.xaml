@@ -10,85 +10,100 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Заголовок и кнопки -->
+        <!-- Заголовок -->
         <StackPanel Grid.Row="0" Margin="10">
             <TextBlock Text="Заказы магазинов" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Text="Список заказов готовых к отгрузке" Margin="0,5,0,0"/>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <Button Content="Обновить" Command="{Binding RefreshCommand}" Margin="0,0,10,0"/>
-                <TextBlock Text="Список заказов за сегодня и готовых к отгрузке" 
-                           VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <Button Content="Отправить выбранные" Command="{Binding ShipSelectedCommand}"
+                        Background="#3498db" Foreground="White" Width="150"/>
             </StackPanel>
         </StackPanel>
 
-        <!-- Основное содержимое -->
+        <!-- Основная область -->
         <Grid Grid.Row="1" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
 
-            <!-- Заказы за сегодня -->
-            <GroupBox Header="Заказы за сегодня" Margin="0,0,5,0">
-                <DataGrid ItemsSource="{Binding TodayOrders}" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
-                        <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70"/>
-                        <DataGridTextColumn Header="Товаров" Binding="{Binding Items.Count}" Width="70"/>
-                        <DataGridTextColumn Header="Сумма" Width="100">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="{Binding Path=TotalAmount, StringFormat=N2}"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTemplateColumn Header="Действие" Width="100">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Content="Отправить" 
-                                            Command="{Binding DataContext.MarkAsShippedCommand, 
-                                                    RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                            CommandParameter="{Binding}"
-                                            Background="#3498db" Foreground="White"
-                                            Padding="5,2"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </GroupBox>
+            <!-- Сообщение когда нет заказов -->
+            <TextBlock Text="Нет заказов готовых к отгрузке. Заказы создаются каждый день автоматически." 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       TextAlignment="Center" TextWrapping="Wrap"
+                       FontSize="16" Foreground="Gray" Width="400">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WrappedOrders.Count}" Value="0">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
-            <!-- Готовые к отгрузке -->
-            <GroupBox Header="Готовые к отгрузке" Grid.Column="1" Margin="5,0,0,0">
-                <DataGrid ItemsSource="{Binding PendingShipments}" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="40"/>
-                        <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70"/>
-                        <DataGridTextColumn Header="Товаров" Binding="{Binding Items.Count}" Width="70"/>
-                        <DataGridTextColumn Header="Сумма" Width="100">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="{Binding Path=TotalAmount, StringFormat=N2}"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Статус" Width="80">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text">
-                                        <Setter.Value>
-                                            <MultiBinding StringFormat="{}{0}">
-                                                <Binding Path="IsProcessed"/>
-                                            </MultiBinding>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </GroupBox>
+            <!-- Таблица когда есть заказы -->
+            <DataGrid x:Name="OrdersGrid" 
+                      ItemsSource="{Binding WrappedOrders}" 
+                      AutoGenerateColumns="False"
+                      SelectionMode="Extended" 
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      IsReadOnly="False">
+                <DataGrid.Style>
+                    <Style TargetType="DataGrid">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WrappedOrders.Count}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Style>
+                <DataGrid.Columns>
+                    <!-- Колонка с чекбоксом -->
+                    <DataGridTemplateColumn Header="Выбор" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          IsHitTestVisible="True"
+                                          Focusable="True"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Магазин" Binding="{Binding StoreId}" Width="70" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Товаров" Binding="{Binding ItemsCount}" Width="70" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Сумма" Width="100" IsReadOnly="True">
+                        <DataGridTextColumn.Binding>
+                            <Binding Path="TotalAmount" StringFormat="{}{0:N2} руб."/>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата" 
+                                       Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" 
+                                       Width="100" 
+                                       IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Статус" 
+                                       Binding="{Binding Status}" 
+                                       Width="100"
+                                       IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
+
+        <!-- Статусная строка - упрощенная версия -->
+        <Border Grid.Row="2" Background="#f8f9fa" Padding="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Выбрано заказов: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding ElementName=OrdersGrid, Path=SelectedItems.Count}"/>
+                <TextBlock Text=" из " Margin="5,0,0,0"/>
+                <TextBlock Text="{Binding WrappedOrders.Count}"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

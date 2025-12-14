@@ -3,8 +3,56 @@
   "WorkspaceRootPath": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\views\\warehousedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\warehousedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\supplyrequestswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\supplyrequestswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\statisticswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\statisticswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\simulationsetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\simulationsetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\orderswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\orderswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\warehousestatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\iwarehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\iwarehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\interfaces\\itestdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\interfaces\\itestdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\ordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,6 +63,42 @@
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\supplyrequestsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\supplyrequestswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\supplyrequestswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\testdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\testdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\services\\integrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\services\\integrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\orderprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,23 +107,11 @@
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\simulationsetupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\discountproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\warehouseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\converters\\priceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\converters\\priceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\converters\\priceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,43 +119,15 @@
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\converters\\priceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\productsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\viewmodels\\warehousedashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\warehousedashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\orderswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\orderswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\services\\testdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\services\\testdatagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\services\\integrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\services\\integrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\supplyrequestswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\supplyrequestswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\converters\\counttovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\converters\\counttovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\converters\\counttovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -91,32 +135,12 @@
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|e:\\projects\\project-mp\\stockmaster\\stockmastercore\\warehousesystem\\converters\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\converters\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\converters\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\converters\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\converters\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\statisticswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\statisticswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\productswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\warehousedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\warehousedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\simulationsetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\simulationsetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\supplyrequestswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|solutionrelative:warehousesystem\\views\\supplyrequestswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseApp.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\views\\statisticswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -155,10 +179,6 @@
       "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41B3C044-D61F-4F42-B8A5-C414280BE2F4}|WarehouseSystem\\WarehouseSystem.csproj|solutionrelative:warehousesystem\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\supplyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\supplyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -180,10 +200,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\simulationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\simulationconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7287ED8-2EB8-45C5-87EB-F9337188E3A9}|StockMasterCore\\StockMasterCore.csproj|solutionrelative:stockmastercore\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -193,11 +209,281 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrdersWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\OrdersWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\OrdersWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\OrdersWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\OrdersWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:24:49.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WarehouseStatistics.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseStatistics.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Models\\WarehouseStatistics.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\WarehouseStatistics.cs",
+              "RelativeToolTip": "StockMasterCore\\Models\\WarehouseStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T15:58:17.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WarehouseService.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\WarehouseService.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\WarehouseService.cs",
+              "ViewState": "AgIAAK4BAAAAAAAAAAAYwM8BAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:10:39.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\MainWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:21:21.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductsWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\ProductsWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\ProductsWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\ProductsWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\ProductsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:24:10.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SimulationSetupWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:22:13.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StatisticsWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\StatisticsWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\StatisticsWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\StatisticsWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\StatisticsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:26:10.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SupplyRequestsWindow.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:25:24.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WarehouseDashboard.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\WarehouseDashboard.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\WarehouseDashboard.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\WarehouseDashboard.xaml",
+              "RelativeToolTip": "WarehouseSystem\\Views\\WarehouseDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:23:04.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Models\\Product.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
+              "RelativeToolTip": "StockMasterCore\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAACHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:04:12.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IWarehouseService.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\IWarehouseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T15:20:46.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductsViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAYwHYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:17:36.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SupplyRequestsViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAA7wJwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:18:04.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderProcessor.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\OrderProcessor.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\OrderProcessor.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwIsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:04:12.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
+              "RelativeToolTip": "WarehouseSystem\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:12:40.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IntegrationService.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Services\\IntegrationService.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Services\\IntegrationService.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Services\\IntegrationService.cs",
+              "RelativeToolTip": "WarehouseSystem\\Services\\IntegrationService.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAYwF4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T12:26:15.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ITestDataGenerator.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\Interfaces\\ITestDataGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T16:18:38.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrdersViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAYwL4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:17:50.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SupplyRequestsWindow.xaml.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
+              "RelativeToolTip": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:25:40.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "InventoryManager.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\InventoryManager.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\InventoryManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowFwAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:04:12.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
+              "RelativeToolTip": "WarehouseSystem\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T16:58:42.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TestDataGenerator.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Services\\TestDataGenerator.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
+              "RelativeToolTip": "StockMasterCore\\Services\\TestDataGenerator.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAYwL8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:04:12.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAmwGsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:16:47.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "PriceConverter.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\PriceConverter.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\PriceConverter.cs",
@@ -205,142 +491,11 @@
               "RelativeToolTip": "WarehouseSystem\\Converters\\PriceConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T14:14:55.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-14T14:14:55.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SimulationSetupViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAYwFsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:17:02.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderProcessor.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Services\\OrderProcessor.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\OrderProcessor.cs",
-              "RelativeToolTip": "StockMasterCore\\Services\\OrderProcessor.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAmwEUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T15:04:12.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "WarehouseService.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Services\\WarehouseService.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseService.cs",
-              "RelativeToolTip": "StockMasterCore\\Services\\WarehouseService.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAUwFgAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T13:10:39.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrdersViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\OrdersViewModel.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAYwFMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:17:50.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SupplyRequestsViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\SupplyRequestsViewModel.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAYwE0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:18:04.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StatisticsViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAYwGEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:18:15.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "InventoryManager.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Services\\InventoryManager.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\InventoryManager.cs",
-              "RelativeToolTip": "StockMasterCore\\Services\\InventoryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T15:04:12.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DiscountProduct.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\DiscountProduct.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Models\\DiscountProduct.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\DiscountProduct.cs",
-              "RelativeToolTip": "StockMasterCore\\Models\\DiscountProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T15:04:12.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\BaseViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\BaseViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\BaseViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\BaseViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:16:34.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductsViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\ProductsViewModel.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAYwJEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:17:36.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 29,
               "Title": "WarehouseDashboardViewModel.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\WarehouseDashboardViewModel.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\WarehouseDashboardViewModel.cs",
@@ -348,12 +503,11 @@
               "RelativeToolTip": "WarehouseSystem\\ViewModels\\WarehouseDashboardViewModel.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAYwF0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:17:21.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T18:17:21.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 28,
               "Title": "PriceConverter.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\PriceConverter.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\PriceConverter.cs",
@@ -365,143 +519,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrdersWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\OrdersWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\OrdersWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\OrdersWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\OrdersWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:24:49.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TestDataGenerator.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Services\\TestDataGenerator.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\TestDataGenerator.cs",
-              "RelativeToolTip": "StockMasterCore\\Services\\TestDataGenerator.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAcwDEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T15:04:12.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\MainWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:21:21.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\MainViewModel.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\MainViewModel.cs",
-              "RelativeToolTip": "WarehouseSystem\\ViewModels\\MainViewModel.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAYwLYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:16:47.144Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IntegrationService.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Services\\IntegrationService.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Services\\IntegrationService.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Services\\IntegrationService.cs",
-              "RelativeToolTip": "WarehouseSystem\\Services\\IntegrationService.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAYwLQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T12:26:15.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SupplyRequestsWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:25:24.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "App.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
-              "RelativeToolTip": "WarehouseSystem\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-14T12:30:14.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CountToVisibilityConverter.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
-              "RelativeToolTip": "WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T13:32:52.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "App.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
-              "RelativeToolTip": "WarehouseSystem\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:12:30.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "BoolToVisibilityConverter.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
-              "RelativeToolTip": "WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T13:31:01.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "StatisticsWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\StatisticsWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\StatisticsWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\StatisticsWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\StatisticsWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:26:10.342Z",
-              "EditorCaption": ""
+              "Title": "StatisticsViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\StatisticsViewModel.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwGEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:18:15.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
+              "Title": "DiscountProduct.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\DiscountProduct.cs",
+              "RelativeDocumentMoniker": "StockMasterCore\\Models\\DiscountProduct.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\DiscountProduct.cs",
+              "RelativeToolTip": "StockMasterCore\\Models\\DiscountProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:04:12.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
               "Title": "BoolToVisibilityConverter.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
@@ -514,53 +556,76 @@
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "ProductsWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\ProductsWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\ProductsWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\ProductsWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\ProductsWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:24:10.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "SimulationSetupWindow.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\SimulationSetupWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:22:13.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "WarehouseDashboard.xaml",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\WarehouseDashboard.xaml",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\WarehouseDashboard.xaml",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\WarehouseDashboard.xaml",
-              "RelativeToolTip": "WarehouseSystem\\Views\\WarehouseDashboard.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-11T18:23:04.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "SupplyRequestsWindow.xaml.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
-              "RelativeToolTip": "WarehouseSystem\\Views\\SupplyRequestsWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Title": "SimulationSetupViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\SimulationSetupViewModel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAYwFsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:25:40.461Z"
+              "WhenOpened": "2025-12-11T18:17:02.05Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
+              "RelativeToolTip": "WarehouseSystem\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-14T12:30:14.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CountToVisibilityConverter.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
+              "RelativeToolTip": "WarehouseSystem\\Converters\\CountToVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:32:52.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
+              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml",
+              "RelativeToolTip": "WarehouseSystem\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-11T18:12:30.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "BoolToVisibilityConverter.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
+              "RelativeToolTip": "WarehouseSystem\\Converters\\BoolToVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:31:01.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "WarehouseSystem\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "WarehouseSystem\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T18:16:34.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "StatisticsWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\StatisticsWindow.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\StatisticsWindow.xaml.cs",
@@ -572,7 +637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "SimulationSetupWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\SimulationSetupWindow.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\SimulationSetupWindow.xaml.cs",
@@ -584,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "WarehouseDashboard.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\WarehouseDashboard.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\WarehouseDashboard.xaml.cs",
@@ -596,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 38,
               "Title": "OrdersWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\OrdersWindow.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\OrdersWindow.xaml.cs",
@@ -608,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "ProductsWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\ProductsWindow.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\ProductsWindow.xaml.cs",
@@ -620,7 +685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 40,
               "Title": "ProductDisplay.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Models\\ProductDisplay.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Models\\ProductDisplay.cs",
@@ -632,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Views\\MainWindow.xaml.cs",
@@ -644,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "SummaryItem.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Models\\SummaryItem.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Models\\SummaryItem.cs",
@@ -656,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\Commands\\RelayCommand.cs",
               "RelativeDocumentMoniker": "WarehouseSystem\\Commands\\RelayCommand.cs",
@@ -668,19 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
-              "RelativeDocumentMoniker": "WarehouseSystem\\App.xaml.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\WarehouseSystem\\App.xaml.cs",
-              "RelativeToolTip": "WarehouseSystem\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T18:12:40.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "Order.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Order.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\Order.cs",
@@ -692,19 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Product.cs",
-              "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "StockMasterCore\\Models\\Product.cs",
-              "ToolTip": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Product.cs",
-              "RelativeToolTip": "StockMasterCore\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T15:04:12.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 49,
               "Title": "SimulationConfig.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\SimulationConfig.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\SimulationConfig.cs",
@@ -716,7 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 48,
               "Title": "Store.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\Store.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\Store.cs",
@@ -728,7 +769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "SupplyRequest.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Models\\SupplyRequest.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Models\\SupplyRequest.cs",
@@ -740,7 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 47,
               "Title": "WarehouseServiceFactory.cs",
               "DocumentMoniker": "E:\\projects\\Project-MP\\StockMaster\\StockMasterCore\\StockMasterCore\\Services\\WarehouseServiceFactory.cs",
               "RelativeDocumentMoniker": "StockMasterCore\\Services\\WarehouseServiceFactory.cs",
@@ -752,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "RuntimeType.cs",
               "DocumentMoniker": "C:\\Users\\egork\\AppData\\Local\\Temp\\.vsdbgsrc\\c85548b9ebc31856ad730fe79146a73d29d6bc4f01c61013bce9d8f5cd2cdf41\\RuntimeType.cs",
               "ToolTip": "C:\\Users\\egork\\AppData\\Local\\Temp\\.vsdbgsrc\\c85548b9ebc31856ad730fe79146a73d29d6bc4f01c61013bce9d8f5cd2cdf41\\RuntimeType.cs",

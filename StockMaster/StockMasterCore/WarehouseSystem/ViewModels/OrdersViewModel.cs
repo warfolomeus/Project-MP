@@ -1,6 +1,7 @@
 ﻿using StockMasterCore.Models;
 using System;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -10,75 +11,181 @@ namespace WarehouseApp.ViewModels
     public class OrdersViewModel : BaseViewModel
     {
         private readonly MainViewModel _mainViewModel;
+        private ObservableCollection<OrderWrapper> _wrappedOrders;
 
         public SimulationConfig Config => Services.IntegrationService.Instance.Config;
         public WarehouseStatistics Statistics => Services.IntegrationService.Instance.WarehouseService.Statistics;
 
-        public ObservableCollection<Order> TodayOrders { get; set; }
-        public ObservableCollection<Order> PendingShipments { get; set; }
+        public ObservableCollection<OrderWrapper> WrappedOrders
+        {
+            get => _wrappedOrders;
+            set => SetField(ref _wrappedOrders, value);
+        }
 
         public ICommand RefreshCommand { get; }
-        public ICommand MarkAsShippedCommand { get; }
+        public ICommand ShipSelectedCommand { get; }
 
         public OrdersViewModel(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
 
-            TodayOrders = new ObservableCollection<Order>();
-            PendingShipments = new ObservableCollection<Order>();
-
+            WrappedOrders = new ObservableCollection<OrderWrapper>();
             RefreshCommand = new Commands.RelayCommand(LoadOrders);
-            MarkAsShippedCommand = new Commands.RelayCommand(MarkAsShipped);
+            ShipSelectedCommand = new Commands.RelayCommand(ShipSelected);
 
             LoadOrders(null);
         }
 
         public void LoadOrders(object parameter)
         {
-            var service = Services.IntegrationService.Instance;
-
-            TodayOrders.Clear();
-            PendingShipments.Clear();
-
-            // Получаем заказы за сегодня
-            var todayOrders = service.GetTodayOrders();
-
-            foreach (var order in todayOrders)
+            try
             {
-                TodayOrders.Add(order);
+                var service = Services.IntegrationService.Instance;
 
-                // Только необработанные заказы в готовые к отгрузке
-                if (!order.IsProcessed)
+                WrappedOrders.Clear();
+
+                // Получаем все необработанные заказы
+                var allOrders = service.GetAllOrders();
+
+                // Фильтруем заказы с положительной суммой и необработанные
+                var todayOrders = allOrders.Where(o =>
+                    !o.IsProcessed &&
+                    o.TotalAmount > 0 &&
+                    o.Items.Any())
+                    .ToList();
+
+                foreach (var order in todayOrders)
                 {
-                    PendingShipments.Add(order);
+                    if (order != null)
+                    {
+                        WrappedOrders.Add(new OrderWrapper(order));
+                    }
                 }
-            }
 
-            OnPropertyChanged(nameof(Statistics));
-            OnPropertyChanged(nameof(Config));
+                OnPropertyChanged(nameof(Statistics));
+                OnPropertyChanged(nameof(Config));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки заказов: {ex.Message}",
+                              "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void MarkAsShipped(object parameter)
+        private void ShipSelected(object parameter)
         {
-            if (parameter is Order order)
+            try
             {
-                try
-                {
-                    // Помечаем заказ как обработанный
-                    order.IsProcessed = true;
+                // Создаем безопасную копию списка
+                var ordersToProcess = new List<OrderWrapper>();
 
-                    // Обновляем отображение
-                    LoadOrders(null);
-
-                    MessageBox.Show($"Заказ #{order.Id} отмечен как отправленный",
-                                  "Заказ отправлен", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                catch (Exception ex)
+                foreach (var wrapper in WrappedOrders.ToList())
                 {
-                    MessageBox.Show($"Ошибка: {ex.Message}",
-                                  "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (wrapper != null && wrapper.IsSelected && !wrapper.IsProcessed)
+                    {
+                        ordersToProcess.Add(wrapper);
+                    }
                 }
+
+                if (ordersToProcess.Count == 0)
+                {
+                    MessageBox.Show("Выберите заказы для отправки",
+                                  "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                int shippedCount = 0;
+                int failedCount = 0;
+                decimal totalRevenue = 0;
+                var failedOrders = new List<string>();
+
+                foreach (var wrapper in ordersToProcess)
+                {
+                    try
+                    {
+                        var processedOrder = Services.IntegrationService.Instance.WarehouseService.ProcessOrderManually(wrapper.Id);
+
+                        if (processedOrder != null && processedOrder.IsProcessed)
+                        {
+                            shippedCount++;
+                            totalRevenue += processedOrder.TotalAmount;
+                        }
+                        else
+                        {
+                            failedCount++;
+                            failedOrders.Add($"Заказ #{wrapper.Id}: недостаточно товаров");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        failedCount++;
+                        failedOrders.Add($"Заказ #{wrapper.Id}: {ex.Message}");
+                    }
+                }
+
+                // Обновляем данные
+                LoadOrders(null);
+
+                string message = $"Отправлено заказов: {shippedCount}\n";
+                message += $"Не удалось отправить: {failedCount}\n";
+                message += $"Общая выручка: {totalRevenue:N2} руб.";
+
+                if (failedOrders.Any())
+                {
+                    message += $"\n\nОшибки:\n{string.Join("\n", failedOrders)}";
+                    MessageBox.Show(message, "Результат отправки", MessageBoxButton.OK,
+                                  shippedCount > 0 ? MessageBoxImage.Warning : MessageBoxImage.Error);
+                }
+                else
+                {
+                    MessageBox.Show(message, "Заказы отправлены", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                // Обновляем статистику на UI
+                OnPropertyChanged(nameof(Statistics));
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}",
+                              "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                LoadOrders(null);
+            }
+        }
+    }
+
+    // Класс-обертка для заказов
+    public class OrderWrapper : BaseViewModel
+    {
+        private bool _isSelected;
+        private Order _order;
+
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set => SetField(ref _isSelected, value);
+        }
+
+        public Order Order
+        {
+            get => _order;
+            set => SetField(ref _order, value);
+        }
+
+        public int Id => Order?.Id ?? 0;
+        public int StoreId => Order?.StoreId ?? 0;
+        public DateTime OrderDate => Order?.OrderDate ?? DateTime.MinValue;
+        public int ItemsCount => Order?.Items?.Count ?? 0;
+        public decimal TotalAmount => Order?.TotalAmount ?? 0;
+        public bool IsProcessed => Order?.IsProcessed ?? false;
+        public string Status => IsProcessed ? "Отправлен" : "Ожидает отправки";
+
+        public OrderWrapper(Order order)
+        {
+            if (order == null)
+                throw new ArgumentNullException(nameof(order));
+
+            Order = order;
+            IsSelected = false;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using StockMasterCore.Models;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -78,13 +79,32 @@ namespace WarehouseApp.ViewModels
 
         private void ShowSupplyRequests()
         {
-            if (Services.IntegrationService.Instance.Products.Count == 0)
+            try
             {
-                MessageBox.Show("Нет данных о товарах!", "Ошибка",
-                              MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                var service = Services.IntegrationService.Instance;
+
+                if (service.Products.Count == 0)
+                {
+                    MessageBox.Show("Нет данных о товарах!", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                // Проверяем, инициализирован ли WarehouseService
+                if (service.WarehouseService == null)
+                {
+                    MessageBox.Show("Сервис склада не инициализирован!", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                CurrentView = new SupplyRequestsViewModel(this);
             }
-            CurrentView = new SupplyRequestsViewModel(this);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка открытия поставок: {ex.Message}",
+                              "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ShowStatistics()
@@ -94,27 +114,18 @@ namespace WarehouseApp.ViewModels
 
         private void ProcessDay()
         {
-            if (Services.IntegrationService.Instance.Products.Count == 0)
+            var service = Services.IntegrationService.Instance;
+
+            if (service.Products.Count == 0)
             {
                 MessageBox.Show("Нет данных для обработки!", "Ошибка",
                               MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            var service = Services.IntegrationService.Instance;
-
             // Проверяем, не завершена ли симуляция
             if (service.IsSimulationComplete)
             {
-                MessageBox.Show("Симуляция завершена! Все дни обработаны.",
-                              "Симуляция завершена", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            // Проверяем, не превысили ли лимит дней
-            if (service.CurrentDay >= service.Config.SimulationDays)
-            {
-                service.IsSimulationComplete = true;
                 MessageBox.Show("Симуляция завершена! Все дни обработаны.",
                               "Симуляция завершена", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
@@ -131,12 +142,12 @@ namespace WarehouseApp.ViewModels
                 // Проверяем завершение симуляции после обработки дня
                 if (service.IsSimulationComplete)
                 {
-                    MessageBox.Show($"День {service.CurrentDay} обработан. Симуляция завершена!",
+                    MessageBox.Show($"День {service.CurrentDay} обработан. Симуляция завершена! Все {service.Config.SimulationDays} дней обработаны.",
                                   "Симуляция завершена", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show($"День {service.CurrentDay} успешно обработан. Осталось дней: {service.Config.SimulationDays - service.CurrentDay}",
+                    MessageBox.Show($"День {service.CurrentDay} успешно обработан. Сгенерированы новые заказы. Осталось дней: {service.Config.SimulationDays - service.CurrentDay}",
                                   "День обработан", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
