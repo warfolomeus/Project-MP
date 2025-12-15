@@ -77,10 +77,16 @@ namespace WarehouseApp.ViewModels
                 {
                     if (product == null) continue;
 
+                    if (product.DaysUntilExpiry <= 0)
+                    {
+                        continue;
+                    }
+
                     Products.Add(product);
 
-                    // НЕ показываем товары с 0 или отрицательным сроком годности
-                    if (product.DaysUntilExpiry <= 3 && product.DaysUntilExpiry > 0 && product.QuantityInStock > 0)
+                    // Теперь добавляем только в ExpiringProducts если срок <= 3 дней и > 0
+                    if (product.DaysUntilExpiry <= 3 &&
+                        product.QuantityInStock > 0)
                     {
                         ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
                         {
@@ -93,7 +99,9 @@ namespace WarehouseApp.ViewModels
                         });
                     }
 
-                    if (product.IsDiscounted && product.DaysUntilExpiry > 0 && product.QuantityInStock > 0)
+                    // Добавляем в DiscountProducts только если есть скидка и срок > 0
+                    if (product.IsDiscounted &&
+                        product.QuantityInStock > 0)
                     {
                         DiscountProducts.Add(new DiscountProduct
                         {

@@ -51,22 +51,32 @@ namespace WarehouseApp.ViewModels
             LowStockProducts.Clear();
             var lowStock = service.WarehouseService.GetLowStockProducts();
             foreach (var product in lowStock)
-                LowStockProducts.Add(product);
+            {
+                // Пропускаем товары с 0 дней до истечения
+                if (product.DaysUntilExpiry > 0)
+                {
+                    LowStockProducts.Add(product);
+                }
+            }
 
             // Обновляем товары для уценки
             ExpiringProducts.Clear();
             var expiring = service.WarehouseService.GetExpiringProducts();
             foreach (var product in expiring)
             {
-                ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
+                // Пропускаем товары с 0 дней до истечения
+                if (product.DaysUntilExpiry > 0)
                 {
-                    Id = product.Id,
-                    Name = product.Name,
-                    DaysUntilExpiry = product.DaysUntilExpiry,
-                    DiscountPercentage = product.DiscountPercentage,
-                    CurrentPrice = product.CurrentPrice,
-                    QuantityInStock = product.QuantityInStock
-                });
+                    ExpiringProducts.Add(new WarehouseApp.Models.ProductDisplay
+                    {
+                        Id = product.Id,
+                        Name = product.Name,
+                        DaysUntilExpiry = product.DaysUntilExpiry,
+                        DiscountPercentage = product.DiscountPercentage,
+                        CurrentPrice = product.CurrentPrice,
+                        QuantityInStock = product.QuantityInStock
+                    });
+                }
             }
 
             OnPropertyChanged(nameof(Summary));

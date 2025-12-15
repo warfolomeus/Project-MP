@@ -81,8 +81,9 @@ namespace StockMasterCore.Services
                     delivery.IsFulfilled = true;
 
                     // Обновляем срок годности для нового товара
-                    product.ExpiryDate = DateTime.Now.AddDays(
-                        _random.Next(config.MinExpiryDays, config.MaxExpiryDays + 1));
+                    // Гарантируем, что срок > 0
+                    int expiryDays = _random.Next(Math.Max(1, config.MinExpiryDays), config.MaxExpiryDays + 1);
+                    product.ExpiryDate = DateTime.Now.AddDays(expiryDays);
 
                     // Сбрасываем скидку для нового товара
                     product.DiscountPercentage = 0;

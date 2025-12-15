@@ -34,6 +34,9 @@ namespace StockMasterCore.Services
                 int packageSize = _random.Next(config.MinPackageSize, config.MaxPackageSize + 1);
                 int initialStock = _random.Next(maxCapacity / 6, maxCapacity / 3 + 1);
 
+                // Гарантируем, что срок годности > 0
+                int expiryDays = _random.Next(Math.Max(1, config.MinExpiryDays), config.MaxExpiryDays + 1);
+
                 products.Add(new Product
                 {
                     Id = i + 1,
@@ -43,7 +46,7 @@ namespace StockMasterCore.Services
                     QuantityInStock = initialStock,
                     MaxCapacity = maxCapacity,
                     PackageSize = packageSize,
-                    ExpiryDate = simulationStartDate.AddDays(_random.Next(config.MinExpiryDays, config.MaxExpiryDays + 1)),
+                    ExpiryDate = simulationStartDate.AddDays(expiryDays),
                     ReorderThreshold = maxCapacity * config.ReorderThresholdPercentage / 100,
                     DiscountPercentage = 0
                 });

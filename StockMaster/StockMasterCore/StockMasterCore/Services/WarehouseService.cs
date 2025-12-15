@@ -301,7 +301,8 @@ namespace StockMasterCore.Services
 
                     // Обновляем срок годности для нового товара
                     var random = new Random();
-                    int newExpiryDays = random.Next(Config.MinExpiryDays, Config.MaxExpiryDays + 1);
+                    // Гарантируем, что срок > 0
+                    int newExpiryDays = random.Next(Math.Max(1, Config.MinExpiryDays), Config.MaxExpiryDays + 1);
                     UpdateExpiryDaysForNewProduct(product.Id, newExpiryDays);
                     product.DiscountPercentage = 0;
 
@@ -376,6 +377,7 @@ namespace StockMasterCore.Services
                 .Where(p =>
                 {
                     int days = GetProductExpiryDays(p.Id);
+                    // Убираем товары с 0 или отрицательным сроком
                     return days <= Config.DiscountDaysThreshold &&
                            days > 0 &&
                            p.QuantityInStock > 0;
@@ -399,6 +401,7 @@ namespace StockMasterCore.Services
                 .Where(p =>
                 {
                     int days = GetProductExpiryDays(p.Id);
+                    // Убираем товары с 0 сроком
                     return days <= Config.DiscountDaysThreshold &&
                            days > 0 &&
                            p.QuantityInStock > 0;
