@@ -1,4 +1,7 @@
-﻿using StockMasterCore.Models;
+﻿//Настройка симуляции. Позволяет пользователю настроить параметры симуляции, генерировать тестовые данные (товары, магазины), запускать основную работу системы
+
+
+using StockMasterCore.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;

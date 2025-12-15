@@ -1,4 +1,6 @@
-﻿using StockMasterCore.Models;
+﻿//Просмотр статистики. ЗАДАЧА: сбор и отображение статистики за весь период, показ ключевых показателей (продажи, выручка, убытки, прибыль)
+
+using StockMasterCore.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;

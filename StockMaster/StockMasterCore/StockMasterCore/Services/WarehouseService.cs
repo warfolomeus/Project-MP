@@ -205,17 +205,14 @@ namespace StockMasterCore.Services
 
                     switch (daysUntilExpiry)
                     {
-                        case 1:
-                            requiredDiscount = 50; // 50% скидка если остался 1 день
-                            break;
                         case 2:
-                            requiredDiscount = 30; // 30% скидка если осталось 2 дня
+                            requiredDiscount = 50; // 30% скидка если осталось 2 дня
                             break;
                         case 3:
-                            requiredDiscount = 20; // 20% скидка если осталось 3 дня
+                            requiredDiscount = 30; // 20% скидка если осталось 3 дня
                             break;
                         default:
-                            requiredDiscount = 0;
+                            requiredDiscount = 20;
                             break;
                     }
 

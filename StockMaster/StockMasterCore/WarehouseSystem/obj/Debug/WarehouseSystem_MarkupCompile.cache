@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\WarehouseSystem\obj\Debug\
+E:\projects\Project-MP\StockMaster\StockMasterCore\WarehouseSystem\obj\Debug\
 WarehouseSystem
 none
 false
 DEBUG;TRACE
-C:\Users\pushi\Desktop\unic\МП\МП проект\Project-MP\StockMaster\StockMasterCore\WarehouseSystem\App.xaml
+E:\projects\Project-MP\StockMaster\StockMasterCore\WarehouseSystem\App.xaml
 71232405039
 
 26-1250745157
-14-1041945504
+141763467474
 Views\MainWindow.xaml;Views\OrdersWindow.xaml;Views\ProductsWindow.xaml;Views\SimulationSetupWindow.xaml;Views\StatisticsWindow.xaml;Views\SupplyRequestsWindow.xaml;Views\WarehouseDashboard.xaml;
 
 False

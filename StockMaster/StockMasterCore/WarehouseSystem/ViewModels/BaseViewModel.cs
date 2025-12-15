@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Базовый класс для всех ViewModel
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

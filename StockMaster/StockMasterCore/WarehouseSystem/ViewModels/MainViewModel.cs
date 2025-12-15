@@ -1,4 +1,6 @@
-﻿using StockMasterCore.Models;
+﻿//Главный координатор приложения. Отвечает за: управление переключением между окнами, координация работы всех ViewModelей, Обработка глобальных команд (ProcessDay, Reset)
+
+using StockMasterCore.Models;
 using System;
 using System.Windows;
 using System.Windows.Input;

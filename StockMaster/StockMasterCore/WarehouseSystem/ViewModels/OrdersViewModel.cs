@@ -1,4 +1,7 @@
-﻿using StockMasterCore.Models;
+﻿//Управление заказами магазинов. ЗАДАЧА: Показывать заказы, поступившие за текущий день, отображать заказы, готовые к отгрузке, обрабатывать отправку заказов (вычитание запасов, обновление статистики),
+//удалять отправленные заказы из списков
+
+using StockMasterCore.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;

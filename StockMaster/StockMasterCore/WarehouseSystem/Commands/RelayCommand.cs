@@ -1,4 +1,6 @@
-﻿using System;
+﻿//ЗАДАЧА: Связывание элементов(кнопок) с методами в ViewModel
+
+using System;
 using System.Windows.Input;
 
 namespace WarehouseApp.Commands

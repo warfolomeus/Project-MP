@@ -1,4 +1,6 @@
-﻿using StockMasterCore.Models;
+﻿//Управление товарами и скидками. Отвечает за: отображение всех товаров на складе, управление скидками (ручное и автоматическое), показ товаров для уценки (скоро истекающие), обновление данных после изменений
+
+using StockMasterCore.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;

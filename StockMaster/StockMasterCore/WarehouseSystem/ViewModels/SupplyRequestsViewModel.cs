@@ -1,4 +1,6 @@
-﻿using StockMasterCore.Models;
+﻿//Управление поставками. ЗАДАЧА: показывать заявки на пополнение запасов, позволять выбирать несколько заявок чекбоксами, массовое выполнение выбранных заявок, отображение статуса выполнения
+
+using StockMasterCore.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
