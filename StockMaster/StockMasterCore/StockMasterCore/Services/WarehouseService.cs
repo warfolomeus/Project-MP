@@ -194,36 +194,57 @@ namespace StockMasterCore.Services
             {
                 int daysUntilExpiry = GetProductExpiryDays(product.Id);
 
-                if (daysUntilExpiry <= Config.DiscountDaysThreshold &&
-                    daysUntilExpiry > 0 &&
-                    product.QuantityInStock > 0 &&
-                    product.DiscountPercentage == 0)
+                Console.WriteLine($"Товар '{product.Name}': {daysUntilExpiry} дней осталось, сейчас скидка {product.DiscountPercentage}%");
+
+                if (daysUntilExpiry <= Config.DiscountDaysThreshold && 
+                    daysUntilExpiry > 0 &&                             
+                    product.QuantityInStock > 0)                       
                 {
-                    // Автоматическая скидка: чем меньше дней, тем больше скидка
-                    decimal discount = 0;
+                    // Рассчитываем какую скидку должен иметь товар
+                    decimal requiredDiscount = 0;
+
                     switch (daysUntilExpiry)
                     {
                         case 1:
-                            discount = 50; // 50% скидка если остался 1 день
+                            requiredDiscount = 50; // 50% скидка если остался 1 день
                             break;
                         case 2:
-                            discount = 30; // 30% скидка если осталось 2 дня
+                            requiredDiscount = 30; // 30% скидка если осталось 2 дня
                             break;
                         case 3:
-                            discount = 20; // 20% скидка если осталось 3 дня
+                            requiredDiscount = 20; // 20% скидка если осталось 3 дня
                             break;
                         default:
-                            discount = 0;
+                            requiredDiscount = 0;
                             break;
                     }
 
-                    if (discount > 0)
+                    // Устанавливаем скидку если она отлична от текущей
+                    if (requiredDiscount != product.DiscountPercentage)
                     {
-                        product.DiscountPercentage = discount;
+                        Console.WriteLine($"  → Устанавливаем скидку {requiredDiscount}% (было {product.DiscountPercentage}%)");
+                        product.DiscountPercentage = requiredDiscount;
                     }
+                    else
+                    {
+                        Console.WriteLine($"  → Скидка уже правильная: {product.DiscountPercentage}%");
+                    }
+                }
+                else if (product.DiscountPercentage > 0)
+                {
+                    // Если у товара есть скидка, но он не подходит под условия
+                    // (просрочен или нет в наличии) - снимаем скидку
+                    Console.WriteLine($"  → Снимаем скидку {product.DiscountPercentage}% (товар не подходит)");
+                    product.DiscountPercentage = 0;
+                }
+                else
+                {
+                    Console.WriteLine($"  → Без изменений");
                 }
             }
         }
+
+        
 
         public Order ProcessOrderManually(int orderId)
         {

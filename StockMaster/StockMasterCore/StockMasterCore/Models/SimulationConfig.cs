@@ -9,7 +9,7 @@ namespace StockMasterCore.Models
         public int ProductTypesCount { get; set; } = 15;     // Видов товаров (12-20)
 
         // Параметры уценки
-        public int DiscountDaysThreshold { get; set; } = 3;  // За сколько дней до конца срока делать скидку
+        public int DiscountDaysThreshold { get; set; } = 4;  // За сколько дней до конца срока делать скидку
         public double DiscountedProductOrderProbability { get; set; } = 0.7; // Вероятность заказа уцененного товара (70%)
 
         // Параметры заказов
